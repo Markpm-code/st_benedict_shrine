@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="bg-color h-25 col-md- carousel">
+  <div class="container-fluid " style="width: 400px;">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active ">
+          <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1674927169/nuns_in_front_of_the_cross_vmiaim.jpg"
+            class="d-block w-100 h-25" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://res.cloudinary.com/da80v7xri/image/upload/v1674927208/station_of_the_cross-under_trees_efhqww.jpg"
+            class="d-block w-100 h-25" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1674927188/station_of_the_cross1_vqbljr.jpg"
+            class="d-block w-100 h-25" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

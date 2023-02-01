@@ -1,0 +1,25 @@
+
+/* Landing page image*/
+.hero{
+    background: url('https://res.cloudinary.com/da80v7xri/image/upload/v1674763544/shrine_photo_rgvwr2.jpg') no-repeat center /cover;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-bg {
+    background-color: rgb(89, 139, 9);
+
+}
+
+.bg-color {
+    background-color: rgb(89, 139, 9);
+
+}
+
+.carousel {
+    height: 400 px;
+}
