@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+body {
+    font-family: 'Berkshire Swash', cursive;
+}
 
 /* Landing page image*/
 .hero{
-    background: url('https://res.cloudinary.com/da80v7xri/image/upload/v1674763544/shrine_photo_rgvwr2.jpg') no-repeat center /cover;
-    min-height: 90vh;
+    background: url('https://res.cloudinary.com/da80v7xri/image/upload/v1674763544/shrine_photo_rgvwr2.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,15 +18,68 @@
 }
 
 .nav-bg {
-    background-color: rgb(89, 139, 9);
-
+    background: linear-gradient(to right, rgb(160, 48, 26),#FFFFFF);
 }
 
-.bg-color {
-    background-color: rgb(89, 139, 9);
+.gallery, .story {
+    text-align: center;
+}
+ 
 
+#images {
+    clear: both;
+    line-height: 0;
+    column-count: 3;
+    column-gap: 0px;
+    margin-bottom: 0 ;
+    border-radius: 10px;
 }
 
-.carousel {
-    height: 400 px;
+#images > img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+} 
+
+/*sign-in-login*/
+#login-bd {
+    border-color: brown;
+    color: black;
+    background-color: #FFFFFF;
+}
+
+#login-bd:hover{
+    background-color: brown;
+    border-color:#741407;
+    color:#FFFFFF;
+}
+
+/*Gallery container*/
+#gallery-container, #services-container, #history-container {
+    margin-top: 120px;
+}
+
+/*hr, h1, p, colors in gallery*/
+.text-color{
+    color: #741407;
+}
+
+/*footer background*/
+#footer-bg {
+    background: linear-gradient(rgb(245, 209, 201), #ffffff, rgb(238, 185, 174) );
+}
+
+#container-bg {
+    background: linear-gradient(#ffffff, rgb(238, 185, 174),rgb(173, 101, 87));
+    margin-top: 30px;
+}
+
+/*story page */
+#story-p {
+    display: inline;
+}
+
+#story-p-bg {
+    background: #ffffffea
 }

@@ -6,20 +6,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
   <!--Bootstrap CSS CDN-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
-  <title>St Benedict's Garden of Life</title>
+  <title>{% block title %}St Benedict's Garden of Life{% endblock title%}</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light nav-bg p-3">
+
+  <nav class="navbar navbar-expand-lg navbar-light nav-bg p-3 fixed-top ">
     <div class="container-fluid">
-      <a class="navbar-brand text-white fs-6 fs-2" href="#">St Benedict's Garden of life<i class="fa-solid fa-hands-praying m-2"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <a class="navbar-brand text-white fs-5 fs-1" href="{% url 'index.html' %}">St Benedict's Garden of life<i
+          class="fa-solid fa-hands-praying m-2 "></i></a>
+      <button class="navbar-toggler  border-dark" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -27,16 +34,19 @@
             <a class="nav-link active text-white" aria-current="page" href="{% url 'index.html' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">About Us</a>
+            <a class="nav-link text-white" href="{% url 'gallery.html' %}">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'about.html' %}">Our Story</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-white" href="{% url 'services.html' %}" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Services
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Station of the Cross</a></li>
-              <li><a class="dropdown-item" href="#">Recollection</a></li>
+              <li><a class="dropdown-item" href="{% url 'services.html' %}">Station of the Cross</a></li>
+              <li><a class="dropdown-item" href="{% url 'services.html' %}#recollection-section">Recollection</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -44,29 +54,19 @@
             </ul>
         </ul>
         <form class="d-flex">
-          <button class="btn btn-outline-success text-white m-1 ms-0" type="submit">Sign Up</button>
-          <button class="btn btn-outline-success text-white m-1" type="submit">Login</button>
+          <button class="btn btn-outline-success  m-1 ms-0 " id="login-bd" type="submit">Sign Up</button>
+          <button class="btn btn-outline-success  m-1 " id="login-bd" type="submit">Login</button>
         </form>
       </div>
     </div>
   </nav>
-  <header>
-    <div class="hero container-fluid ">
-      <h1 class="text-white">Welcome To St. Benedict's Garden Of Life</h1>
-      <p class="text-white fs-6 fs-4 bg-secondary rounded p-2">Where your Body, Soul and Mind gets revitalised.</p>
-      <!--Needs  a link for the booking-->
-      <button class="border border -secondary p-2 rounded w-25 fs-6 fs-4">Book Now</button>
-    </div>
-  </header>
-  <hr>
 
-  <main>
-    {% block content %}
-    <!--content goes here-->
-    {% endblock %}
-  </main>
+  {% block content %}
+  <!--content goes here-->
+  {% endblock %}
 
-  <footer class="container-fluid">
+
+  <footer class="container-fluid p-2 " id="footer-bg">
     <div class=" m-4 d-flex justify-content-center fs-6 fs-5 fs-4">
       <div>
         <p>St Benedict's Garden of Life ©</p>
@@ -74,20 +74,18 @@
       <div>
         <ul class="me-4">
           <!--Need to change the links-->
-          <li class="list-inline-item "><a
-              href="https://www.facebook.com/joshuabrianbonnifacio/videos/1955668431178694/" target="_blank"
+          <li class="list-inline-item "><a href="https://www.facebook.com/StBenedictsGardenOfLife" target="_blank"
               rel="noopener"><i class="fab fa-facebook "></i></a></li>
-          <li class="list-inline-item"><a href="https://www.twitter.com" target="_blank" rel="noopener"><i
-                class="fab fa-twitter-square"></i></a></li>
-          <li class="list-inline-item"><a href="https://youtu.be/D2r0DEGr1I4" target="_blank" rel="noopener"><i
-                class="fab fa-youtube-square"></i></a></li>
+          <li class="list-inline-item"><a href="https://youtu.be/p4Fa6WfNHSA" target="_blank" rel="noopener">
+              <i class="fab fa-youtube-square text-danger"></i></a></li>
         </ul>
       </div>
       <div>
-        <p>Created by Marlon Mandaya</p>
+        <p>Design by Marlon Mandaya</p>
       </div>
     </div>
   </footer>
+
   <!--fontawesome kit-->
   <script src="https://kit.fontawesome.com/0969cca03a.js" crossorigin="anonymous"></script>
   <!--Bootstrap js CDN-->

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our story{% endblock title %}
+
+
+
+{% block content %}
+<h1>About Us</h1>
+<div class="container-fluid bg-light" id="history-container">
+    <div class="story ">
+        <p class="fs-5 text-color fst-italic">Our story at <span class="fs-2">St. Benedict's</span></p>
+        <hr class=" w-75 mx-auto text-color">
+        <h1 class="fs-1 text-color fw-bold">History</h1>
+    </div>
+
+    <div class="card mb-3 " style="max-width: 400px;" id="story-p">
+        <div class="row gx-5 ">
+            <div class="col-md-4">
+                <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1675506088/uncle_s_photo_z1apti.jpg"
+                    class="img-fluid rounded-circle  $modal-fade-transform: scale(.8)" alt="priest">
+            </div>
+            <div class="col-md-8 gx-5 " id="story-p-bg">
+                <div class="card-body ">
+                    <h2 class="card-title">Our Story beginnings</h2>
+                    <p class="card-text">St.Benedict's Garden of life is a 2.2 acres of land enshrouded in forest
+                        greenery at the slopes of the lofty Mt. Malindang in Mindanao providing a majestic view of the
+                        sorrrounding towns.</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
