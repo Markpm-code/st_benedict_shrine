@@ -69,9 +69,9 @@ body {
 #footer-bg {
     background: linear-gradient(rgb(245, 209, 201), #ffffff, rgb(238, 185, 174) );
 }
-
+/*services*/
 #container-bg {
-    background: linear-gradient(#ffffff, rgb(238, 185, 174),rgb(173, 101, 87));
+    background: linear-gradient(#ffffff, rgb(238, 185, 174),#f5efef);
     margin-top: 30px;
 }
 
@@ -81,5 +81,5 @@ body {
 }
 
 #story-p-bg {
-    background: #ffffffea
+    background: #f5efef;
 }
