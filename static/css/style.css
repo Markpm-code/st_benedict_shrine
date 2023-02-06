@@ -83,3 +83,8 @@ body {
 #story-p-bg {
     background: #f5efef;
 }
+
+#img-overlay {
+    height:200px;
+    width: 200px;
+}
