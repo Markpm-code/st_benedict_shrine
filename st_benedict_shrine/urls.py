@@ -15,12 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from shrine.views import index, about, gallery, services
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('',index, name='index.html'),
-   path('about/',about, name='about.html'),
-   path('gallery/',gallery, name='gallery.html'),
-   path('services/', services, name='services.html') 
+    path('', include('shrine.urls'), name='shrine.urls')
 ]
