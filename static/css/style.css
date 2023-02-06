@@ -35,6 +35,7 @@ body {
     border-radius: 10px;
 }
 
+/*gallery images */
 #images > img {
     width: 100%;
     height: auto;
