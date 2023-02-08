@@ -89,3 +89,15 @@ body {
     height:200px;
     width: 200px;
 }
+
+/*rezise images in smaller screen */
+@media  (max-width: 414px) {
+    #images {
+        clear: both;
+        line-height: 0;
+        column-count: 1;
+        column-gap: 0px;
+        margin-bottom: 0 ;
+        border-radius: 10px;
+    }
+}
