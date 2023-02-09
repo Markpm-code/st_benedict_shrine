@@ -25,6 +25,9 @@ body {
     text-align: center;
 }
  
+.border-menu {
+    border-color: #741407;
+}
 
 #images {
     clear: both;
@@ -99,5 +102,11 @@ body {
         column-gap: 0px;
         margin-bottom: 10px ;
     }
+
+    .b-menu {
+        background-color: #d16759;
+    }
+    
+
 }
 
