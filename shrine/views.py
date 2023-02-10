@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views import 
+from django.views import generic
 
 # Create your views here.
 def index(request):
@@ -15,4 +15,6 @@ def gallery(request):
 
 
 def services(request):
-    return render(request, 'services.html')      
+    return render(request, 'services.html') 
+
+ 
