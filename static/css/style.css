@@ -62,7 +62,7 @@ body {
     color: brown;
 }
 
-#login {
+#login, #signup {
     margin: 162px 0 290px;
 }
 
@@ -117,7 +117,7 @@ body {
         border: none;
     }
 
-    #login {
+    #login, #signup {
         margin: 140px 0 50px;
     }
 

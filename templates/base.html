@@ -57,8 +57,8 @@
           {% if user.is_authenticated %}
           <a href="{% url 'account_logout' %}">Logout</button></a>
           {% else %}
-          <a href="{% url 'account_signup' %}" id="signup-bg" class="m-1 ms-0 mx-4 text-decoration-none  rounded" >Sign Up</a>
-          <a href="{% url 'account_login' %}" id="login-bg" class="m-1 ms-0 mx-4 text-decoration-none  rounded ">Login</a>
+          <a href="{% url 'account_signup' %}" id="signup-bg" class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded" >Sign Up</a>
+          <a href="{% url 'account_login' %}" id="login-bg" class="m-1 ms-0 mx-4 text-decoration-none  border border-light rounded ">Login</a>
           {% endif %}
         </form>
       </div>

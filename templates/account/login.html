@@ -9,7 +9,7 @@
 
 <div class="container-fluid "id="login">
     <div class="login">
-        <p class="fs-5 text-color fst-italic">{% trans "Please login at" %} <span class="fs-2">{% trans "St. Benedict's" %}</span></p>
+        <p class="fs-5 text-color fst-italic">{% blocktrans %}Please login at<span class="fs-2">St. Benedict's</span>{% endblocktrans %}</p>
         <hr class=" w-75 mx-auto text-color">
         <h2 class="fs-1 text-color fw-bold">{% trans "Login" %}</h2>
     </d>
@@ -30,7 +30,7 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
-                <button class="btn btn-signup right" type="submit" id="signup-bg">{% trans "Login" %}</button>
+                <button class="btn btn-signup right" type="submit" id="login-bg">{% trans "Login" %}</button>
             </form>
         </div>
     </div>
