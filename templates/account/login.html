@@ -7,12 +7,16 @@
 
 {% block content %}
 
-<div class="container" style="margin: 262px 0;">
+<div class="container-fluid "id="login">
+    <div class="login">
+        <p class="fs-5 text-color fst-italic">{% trans "Please login at" %} <span class="fs-2">{% trans "St. Benedict's" %}</span></p>
+        <hr class=" w-75 mx-auto text-color">
+        <h2 class="fs-1 text-color fw-bold">{% trans "Login" %}</h2>
+    </d>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
+            <p>{% blocktrans %}Welcome back to St. Benedict's Garden of Life. To book a date, please log in. If
                 you
                 have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
@@ -24,9 +28,9 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                <button class="btn btn-signup right" type="submit" id="signup-bg">{% trans "Login" %}</button>
             </form>
         </div>
     </div>

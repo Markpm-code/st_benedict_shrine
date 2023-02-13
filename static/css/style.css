@@ -22,7 +22,8 @@ body {
 }
 
 .gallery,
-.story {
+.story,
+.login {
     text-align: center;
 }
 
@@ -61,6 +62,9 @@ body {
     color: brown;
 }
 
+#login {
+    margin: 162px 0 290px;
+}
 
 /*Gallery container*/
 #gallery-container,
@@ -110,8 +114,11 @@ body {
     }
 
     .b-menu {
-        background-color: brown;
+        border: none;
     }
 
+    #login {
+        margin: 140px 0 50px;
+    }
 
 }
