@@ -23,7 +23,9 @@ body {
 
 .gallery,
 .story,
-.login {
+.login,
+.signup,
+.logout {
     text-align: center;
 }
 
@@ -46,7 +48,8 @@ body {
 
 /*sign-in-login*/
 #login-bg,
-#signup-bg {
+#signup-bg,
+#logout-bg {
     color: #FFFFFF;
     background-color: brown;
     padding: 6px;
@@ -57,13 +60,20 @@ body {
     color: brown;
 }
 
-#login-bg:hover {
+#login-bg:hover,
+#logout-bg:hover {
     background-color: #FFFFFF;
     color: brown;
 }
 
-#login, #signup {
+#login, 
+#signup,
+#logout {
     margin: 162px 0 290px;
+}
+
+.logout {
+    margin: 240px 0 450px;
 }
 
 /*Gallery container*/
@@ -121,4 +131,7 @@ body {
         margin: 140px 0 50px;
     }
 
+    .logout {
+        margin: 140px 0 40px;
+    }
 }
