@@ -49,13 +49,15 @@ body {
 /*sign-in-login*/
 #login-bg,
 #signup-bg,
-#logout-bg {
+#logout-bg,
+#request-bg {
     color: #FFFFFF;
     background-color: brown;
     padding: 6px;
 }
 
-#signup-bg:hover {
+#signup-bg:hover,
+#request-bg:hover {
     background-color: #FFFFFF;
     color: brown;
 }

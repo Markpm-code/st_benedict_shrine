@@ -16,6 +16,3 @@ def gallery(request):
 
 def services(request):
     return render(request, 'services.html') 
-
-def booking(request):
-    return render(request, 'booking.html') 
