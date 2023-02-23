@@ -50,7 +50,13 @@ body {
 #login-bg,
 #signup-bg,
 #logout-bg,
-#request-bg {
+#request-bg,
+/*amend button*/
+#amend-bg,
+/* requirements modal*/
+#requirements-bg,
+/*cancel modal background*/
+#cancel-bg {
     color: #FFFFFF;
     background-color: brown;
     padding: 6px;

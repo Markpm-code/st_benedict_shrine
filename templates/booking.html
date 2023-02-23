@@ -15,7 +15,7 @@
             <h6 class="double-booking">{{ error }}</h6>
             <!-- The booking form can be found in the booking app in forms.py. -->
                 <form method="POST" action="{% url 'booking' %}" class=" mb-4 ">
-                    {{ booking_form.as_p }}
+                    {{ booking_form.as_p}}
                     {% csrf_token %}
                     <button type="submit" class="rounded border border-white" id="request-bg" value="Post">Request a
                         Booking</button>

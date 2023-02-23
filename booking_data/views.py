@@ -1,6 +1,7 @@
-
-from django.shortcuts import render, redirect, reverse
+import datetime
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic
+from django.db import IntegrityError
 from .models import Booking_data
 from .forms import Booking_dataForm
 
@@ -54,8 +55,7 @@ def booking(request):
                         'error': error,
                     })
 
-               #return redirect(reverse("manage_booking.html"))
-                return redirect(reverse('booking.html'))
+                return redirect(reverse("reservations"))
 
             else:
                 return render(request, 'booking.html', {
@@ -71,15 +71,13 @@ def booking(request):
         return redirect(reverse("account_login"))
 
 
-class Booking_dataList(generic.ListView):
+class ReservationList(generic.ListView):
     """
     Each individual booking within the Booking model,
     is now referred to as a reservation for clarity.
     Class based view that inherits from the Booking model.
     """
     model = Booking_data
-    #booking_form= Booking_dataForm
-    #template_name = 'booking.html'
 
     def sort(self, bookings):
         """
@@ -108,38 +106,59 @@ class Booking_dataList(generic.ListView):
         """
         if request.user.is_authenticated:
             bookings = Booking_data.objects.filter(user=request.user)
-            manage_booking = filter(self.sort, bookings)
+            reservations = filter(self.sort, bookings)
 
             return render(
-                request, 'manage_booking.html',
+                request, 'reservations.html',
                 {
-                    'manage_booking': manage_booking,
+                    'reservations': reservations,
                 },
             )
 
         else:
-            return redirect(reverse("account_login")) 
+            return redirect(reverse("account_login"))
 
 
-def manage_booking(request):
+def amend_reservation(request, reservation_id):
     """
-    test to manage the booking
+    Uses an if/else statement to assert the user attempting
+    to access the amend feature is an authenticated user,
+    if not redirects to the sign in page.
+    If the signed in user is authenticated
+    a copy of the reservation from the Booking database is created.
+    The signed in users ID is then compared to the reservations user ID.
+    If not equal they are redirected to the their own reservations.
+    If equal an instance of the BookingForm with the reservation ID is created.
+    This instance is then returned to the amend_booking template in context.
+    On a POST request, gets the amended data from the BookingForm,
+    places the data in an instance. Checks that the instance is valid.
+    If the instance is invalid the BookingForm is reloaded,
+    It is populated with the information from the failed POST request.
+    If valid, a try/except statement is then used to ensure the booking
+    meets the Booking models unique_booking constraint.
+    If it fails the error message is returned as context
+    along with the POST data and displayed to the user.
+    If it passes the existing reservation is updated with the new information
+    provided in the POST request and has it's status set to 'pending' or 0
+    before it is saved to the database.
+    The user is then redirected to the reservations page.
     """
     if request.user.is_authenticated:
-        manage_booking = Booking_data
+        reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
 
-        if current_user == manage_booking.user:
+        if current_user == reservation.user:
             context = {
-                "mobile": manage_booking.mobile,
-                "date": manage_booking.date,
-                "time": manage_booking.time,
-                "notes": manage_booking.notes,
-                "attendees": manage_booking.attendees
+                "email": reservation.email,
+                "mobile": reservation.mobile,
+                "date": reservation.date,
+                "time": reservation.time,
+                "notes": reservation.notes,
+                "attendees": reservation.attendees
             }
 
             if request.method == 'POST':
-                booking_form = Booking_dataForm(request.POST, instance=manage_booking)
+                booking_form = Booking_dataForm(request.POST, instance=reservation)
 
                 if booking_form.is_valid():
                     updated_booking = booking_form.save(commit=False)
@@ -150,28 +169,52 @@ def manage_booking(request):
                         error = (
                             'You have already requested this reservation'
                         )
-                        return render(request, 'manage_booking.html', {
+                        return render(request, 'amend_booking.html', {
                             "booking_form": Booking_dataForm(request.POST),
                             'error': error,
                         })
 
-                    return redirect(reverse("manage.booking.html"))
+                    return redirect(reverse("reservations"))
 
                 else:
-                    return render(request, 'manage_booking.html', {
+                    return render(request, 'amend_booking.html', {
                         "booking_form": Booking_dataForm(request.POST)
                     })
 
             else:
-                return render(request, 'manage_booking.html', {
+                return render(request, 'amend_booking.html', {
                         "booking_form": Booking_dataForm(context)
                     })
 
         else:
-            return redirect(reverse("manage_booking.html"))
+            return redirect(reverse("reservations"))
 
     else:
         return redirect(reverse("account_login"))
 
 
+def cancel_reservation(request, reservation_id):
+    """
+    Uses an if/else statement to assert the user attempting
+    to access the cancel feature is an authenticated user,
+    if not redirects to the sign in page.
+    If the signed in user is authenticated
+    a copy of the reservation from the Booking database is created.
+    The signed in users ID is then compared to the reservations user ID.
+    If not equal they are redirected to the sign in page.
+    If equal the reservation is deleted from the database via its unique id,
+    the user is then redirected back to the reservations.html page.
+    """
+    if request.user.is_authenticated:
+        reservation = get_object_or_404(Booking_data, id=reservation_id)
+        current_user = request.user
 
+        if current_user == reservation.user:
+            reservation.delete()
+            return redirect(reverse("reservations"))
+
+        else:
+            return redirect(reverse("reservations"))
+
+    else:
+        return redirect(reverse("account_login"))

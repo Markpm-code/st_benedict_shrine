@@ -13,7 +13,7 @@ class Booking_dataAdmin(admin.ModelAdmin):
     making business decsions. Also allows for search by booking lead.
     Containts methods to accept or decline the bookings within the dropdown.
     """
-    list_display = ('lead', 'date', 'time', 'attendees', 'status', 'notes', 'mobile',)
+    list_display = ('lead', 'date', 'time', 'attendees', 'status', 'notes', 'mobile','email',)
     list_filter = ('date', 'time',)
     search_fields = ('lead',)
     actions = ['accept_booking', 'decline_booking']

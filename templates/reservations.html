@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- The container for each individual reservation card. -->
+<div class="container-fluid mb-3 " style="margin-top:160px;">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <h2 class="page-heading text-center text-color">Reservations</h2>
+            <hr class=" w-75 mx-auto mt-2 text-color mb-4">
+            <p class="text-center text-color">Manage your reservations here.</p>
+            <div class="row">
+                <!-- Iterates over the reservations variable within the ReservationList on views. -->
+                {% for reservation in reservations %}
+                <!-- Contains the info displayed on the card for each reservation. -->
+                <div class="col-md-4 mt-4 mb-4 mx-auto">
+                    <div class="card mb-4">
+                        <div class="card-body border border-danger">
+                            <!-- Displays the reservations date and time as title. -->
+                            <h4 class='card-title text-uppercase text-center'>{{ reservation.date }} at
+                                {{ reservation.time }}</h4>
+                            <!-- Displays the booking lead. -->
+                            <h6 class="text-uppercase">{{ reservation.lead }}</h6>
+                            <div class='card-text'>
+                                <!-- Displays the provided mobile. -->
+                                <p><i class="fas fa-phone"></i> {{ reservation.mobile }}</p>
+                                <!-- Displays the provided email. -->
+                                <p><i class="far fa-envelope"></i> {{ reservation.email }}</p>
+                                <!-- Displays the number of guests for the specific reservation. -->
+                                <p>Number of attendees: {{ reservation.attendees }}</p>
+                                <!-- Contains the button for the modal that details any special requirements made. Stored within notes on the Booking modal. -->
+                                <button data-bs-toggle='modal' data-bs-target='#notes' class="btn" id="requirements-bg">Special
+                                    Requirements <i class="fas fa-location-arrow"></i></button>
+                                <!-- if/else loop for displaying the current status of the reservation. -->
+                                <div class='text-center h6'>
+                                    {% if reservation.status == 1 %}
+                                    <p>Reservation Accepted</p>
+                                    {% elif reservation.status == 2 %}
+                                    <p>Reservation Declined</p>
+                                    {% else %}
+                                    <p>Request Pending</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- Contains the buttons that allows the user to cancel or amend the reservation. -->
+                            <div class='text-center'>
+                                <!-- Triggers 'cancel' modal. -->
+                                <button data-bs-toggle='modal' data-bs-target='#cancel'
+                                    class="btn btn-secondary text-white">Cancel</button>
+                                <!-- Redirects to the amend reservation page. -->
+                                <a class="btn" id="amend-bg" href="/amend/{{ reservation.id }}">Amend</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Special Requirements Modal. -->
+                <div class="modal fade" id="notes" tabindex="-1" aria-labelledby="special requirements modal"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header"  id="requirements-bg">
+                                <h5 class="modal-title " id="notes">Special Requirements</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    {{ reservation.notes }}
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cancel Reservation Modal. -->
+                <div class="modal fade" id="cancel" tabindex="-1" aria-labelledby="cancel reservation modal"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" id="cancel-bg">
+                                <h5 class="modal-title" id="cancel">Would you like to cancel this reservation ?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <h5 class='card-title text-uppercase'>{{ reservation.date }} at {{ reservation.time }}
+                                </h5>
+                                <p>Number of Attendees: {{ reservation.attendees }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    aria-label="Close">Close</button>
+                                <a class="btn" id="cancel-bg" href="/cancel/{{ reservation.id }}">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Counter for placing three reservations per row. -->
+                {% if forloop.counter|divisibleby:3  %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+        </div>
+        <a href="{% url 'booking' %}" class="text-center"><button class="btn btn-secondary mt-4">Make another booking</button></a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

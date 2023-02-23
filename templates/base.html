@@ -53,13 +53,15 @@
               <li><a class="dropdown-item" href="#">Mountain Trail Walk</a></li>
             </ul>
         </ul>
+        {% if user.is_authenticated %}
+          <a class="text-decoration-none text-white mx-auto ">Hello {{ user.username }}, Welcome to St.Benedict!</a>
+        {% endif %}
         <form class="d-flex">
           {% if user.is_authenticated %}
-          <!--manage boooking needs update-->
-          <a href="{% url 'manage_booking.html' %}" id="logout-bg"
-            class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded">Manage Booking</a>  
+          <a href="{% url 'reservations' %}" id="logout-bg"
+            class=" m-1 ms-0 mx-1  text-decoration-none border border-light rounded">Reservations</a>
           <a href="{% url 'account_logout' %}" id="logout-bg"
-            class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded">Log Out</a>
+            class=" m-1 ms-0 mx-1  text-decoration-none border border-light rounded">Log Out</a>
           {% else %}
           <a href="{% url 'account_signup' %}" id="signup-bg"
             class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded px-3">Sign Up</a>
