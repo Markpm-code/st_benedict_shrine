@@ -8,7 +8,7 @@ class Booking_dataForm(forms.ModelForm):
     """
     this is a test for booking form
     """
-
+   
     mobile = forms.CharField(
         label='Contact Number',
         required=True,
@@ -19,23 +19,21 @@ class Booking_dataForm(forms.ModelForm):
         label='Date of Booking',
         required=True,
         widget=DatePickerInput(),
-        validators=[
-            validators.validate_future_date, validators.validate_open_day
-           ],
+       
     )
 
     time = forms.TimeField(
         label='Arrival Time',
         required=True,
         widget=TimePickerInput(),
-        validators=[validators.validate_opening_hour],
+       
     )
 
     notes = forms.CharField(
         label='Special Requirements',
         required=False,
         widget=forms.Textarea(attrs={
-            'placeholder': 'Any special requirements we should be aware of?'
+            'placeholder': 'Please enter additional requirements here.'
         }),
         max_length=300,
     )
@@ -44,7 +42,6 @@ class Booking_dataForm(forms.ModelForm):
         label='Number of Attendees',
         required=True,
         widget=forms.TextInput(attrs={'placeholder': 'Attendess'}),
-        validators=[validators.validate_guest_size],
     )
 
     class Meta:

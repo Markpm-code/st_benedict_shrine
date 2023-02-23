@@ -54,7 +54,8 @@ def booking(request):
                         'error': error,
                     })
 
-                return redirect(reverse("reservations"))
+               #return redirect(reverse("manage_booking.html"))
+                return redirect(reverse('booking.html'))
 
             else:
                 return render(request, 'booking.html', {
@@ -77,8 +78,8 @@ class Booking_dataList(generic.ListView):
     Class based view that inherits from the Booking model.
     """
     model = Booking_data
-    booking_form= Booking_dataForm
-    template_name = 'booking.html'
+    #booking_form= Booking_dataForm
+    #template_name = 'booking.html'
 
     def sort(self, bookings):
         """
@@ -106,15 +107,71 @@ class Booking_dataList(generic.ListView):
         Renders to the 'reservations.html' template.
         """
         if request.user.is_authenticated:
-            bookings = Booking.objects.filter(user=request.user)
-            reservations = filter(self.sort, bookings)
+            bookings = Booking_data.objects.filter(user=request.user)
+            manage_booking = filter(self.sort, bookings)
 
             return render(
-                request, 'reservations.html',
+                request, 'manage_booking.html',
                 {
-                    'reservations': reservations,
+                    'manage_booking': manage_booking,
                 },
             )
 
         else:
-            return redirect(reverse("account_login"))        
+            return redirect(reverse("account_login")) 
+
+
+def manage_booking(request):
+    """
+    test to manage the booking
+    """
+    if request.user.is_authenticated:
+        manage_booking = Booking_data
+        current_user = request.user
+
+        if current_user == manage_booking.user:
+            context = {
+                "mobile": manage_booking.mobile,
+                "date": manage_booking.date,
+                "time": manage_booking.time,
+                "notes": manage_booking.notes,
+                "attendees": manage_booking.attendees
+            }
+
+            if request.method == 'POST':
+                booking_form = Booking_dataForm(request.POST, instance=manage_booking)
+
+                if booking_form.is_valid():
+                    updated_booking = booking_form.save(commit=False)
+                    updated_booking.status = 0
+                    try:
+                        updated_booking.save()
+                    except IntegrityError as error:
+                        error = (
+                            'You have already requested this reservation'
+                        )
+                        return render(request, 'manage_booking.html', {
+                            "booking_form": Booking_dataForm(request.POST),
+                            'error': error,
+                        })
+
+                    return redirect(reverse("manage.booking.html"))
+
+                else:
+                    return render(request, 'manage_booking.html', {
+                        "booking_form": Booking_dataForm(request.POST)
+                    })
+
+            else:
+                return render(request, 'manage_booking.html', {
+                        "booking_form": Booking_dataForm(context)
+                    })
+
+        else:
+            return redirect(reverse("manage_booking.html"))
+
+    else:
+        return redirect(reverse("account_login"))
+
+
+

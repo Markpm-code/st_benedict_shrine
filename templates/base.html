@@ -55,13 +55,16 @@
         </ul>
         <form class="d-flex">
           {% if user.is_authenticated %}
+          <!--manage boooking needs update-->
+          <a href="{% url 'manage_booking.html' %}" id="logout-bg"
+            class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded">Manage Booking</a>  
           <a href="{% url 'account_logout' %}" id="logout-bg"
             class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded">Log Out</a>
           {% else %}
           <a href="{% url 'account_signup' %}" id="signup-bg"
             class="m-1 ms-0 mx-4 text-decoration-none border border-light rounded px-3">Sign Up</a>
           <a href="{% url 'account_login' %}" id="login-bg"
-            class="m-1 ms-0 mx-4 text-decoration-none  border border-light rounded px-3">Login</a>
+            class="m-1 ms-0 mx-4 text-decoration-none  border border-light rounded px-3">Log in</a>
           {% endif %}
         </form>
       </div>

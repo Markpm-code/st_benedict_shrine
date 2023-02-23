@@ -78,6 +78,12 @@ body {
     margin: 240px 0 450px;
 }
 
+/*booking-link*/
+#book-now {
+    background-color: brown;
+    border: none;
+}
+
 /*Gallery container*/
 #gallery-container,
 #services-container,

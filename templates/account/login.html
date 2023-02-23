@@ -12,7 +12,7 @@
         <p class="fs-5 text-color fst-italic">{% blocktrans %}Please login at <span class="fs-2">St.
                 Benedict's</span>{% endblocktrans %}</p>
         <hr class=" w-75 mx-auto text-color">
-        <h2 class="fs-1 text-color fw-bold">{% trans "Login" %}</h2>
+        <h3 class="fs-1 text-color fw-bold">{% trans "Log in" %}</h3>
         </d>
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
@@ -31,7 +31,7 @@
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="btn btn-signup right px-4" type="submit" id="login-bg">{% trans "Login" %}</button>
+                    <button class="btn btn-signup right px-4" type="submit" id="login-bg">{% trans "Log in" %}</button>
                 </form>
             </div>
         </div>

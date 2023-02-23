@@ -5,6 +5,7 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
+
 <div class="container-fluid" id="logout">
     <div class="logout">
         <div>
@@ -22,21 +23,20 @@
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header " id="logout-bg">
                             <h5 class="modal-title" id="exampleModalLabel">{% trans 'Log Out' %}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <p>{% trans 'Are you sure you want to log out?' %}</p>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer">   
                             <form method="post" action="{% url 'account_logout' %}">
                                 {% csrf_token %}
                                 {% if redirect_field_value %}
                                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                                 {% endif %}
-                                <button class="border-light rounded" type="submit">{% trans 'Log out' %}</button>
-                                <button class="border-light rounded" type="button">{% trans 'Continue booking' %}</button>
+                                <button class="border-light rounded px-2" type="submit">{% trans 'Log out' %}</button>
                             </form>
                         </div>
                     </div>
@@ -45,4 +45,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
