@@ -6,24 +6,20 @@ from .models import Booking_data
 from .forms import Booking_dataForm
 
 
-#def booking(request):
-#    return render(request, 'booking.html')
-
 def booking(request):
     """
     Uses an if/else statement to assert the user attempting
     to access the booking feature is an authenticated user,
     if not redirects to the sign in page. Otherwise
-    renders the BookingForm on the booking.html template.
-    On a POST request, gets the data from the BookingForm,
+    renders the Booking_dataForm on the booking.html template.
+    On a POST request, gets the data from the Booking_dataForm,
     places the data in an instance. Checks that the instance is valid.
-    If the booking is invalid the BookingForm will not post,
+    If the booking is invalid the Booking_dataForm will not post,
     The fields remain populated with the POST data.
-    Field validation is handled in the Booking model and BookingForm.
+    Field validation is handled in the Booking_data model and Booking_dataForm.
     If valid saves the form without commiting,
     The valid booking then has the authorized users ID applied to it.
-    Plus their first & last name as the lead field
-    and the email address registered to their account as the email field.
+    The email address registered to their account as the email field.
     A try/except statement is then used to ensure the booking
     meets the Booking models unique_booking constraint.
     If it passes the booking is saved to the database.
@@ -41,7 +37,7 @@ def booking(request):
                 user = request.user  # For use in logic below.
                 current_booking = booking_form.save(commit=False)
                 current_booking.user = user
-                current_booking.lead = f'{user.first_name} {user.last_name}'
+                current_booking.lead = user.lead #f'{user.first_name} {user.last_name}'
                 current_booking.email = user.email
 
                 try:

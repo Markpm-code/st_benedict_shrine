@@ -25,7 +25,7 @@ def validate_future_date(value):
     Using the datetime method datetime.date.today
     ensures the input value is a future date.
     If validation is failed the custom error message is returned.
-    If value is equal to current day provdes an alternate error message.
+    If value is equal to current day provides an alternate error message.
     """
     if value < datetime.date.today():
         raise ValidationError(

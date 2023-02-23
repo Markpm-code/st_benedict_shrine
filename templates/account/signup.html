@@ -8,9 +8,9 @@
 <div class="container-fluid" id="signup">
   <div class="signup">
     <p class="fs-5 text-color fst-italic">{% blocktrans %}Please sign up at <span class="fs-2">St.
-      Benedict's</span>{% endblocktrans %}</p>
+        Benedict's</span>{% endblocktrans %}</p>
     <hr class=" w-75 mx-auto mt-4 text-color">
-    <h2 class="fs-2 text-color fw-bold mt-5">{% trans "Sign up form" %}</h2>
+    <h2 class="fs-2 text-color fw-bold mt-4">{% trans "Sign up form" %}</h2>
 
     <p class="mt-4">{% blocktrans %}Already have an account? Then please <a
         href="{{ login_url }}">Login.</a>{% endblocktrans %}</p>
@@ -21,8 +21,8 @@
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-      <button type="submit" class="mt-1 border border-light rounded p-2" id="signup-bg">{% trans "Sign Up" %}
+      <button type="submit" class="mb-4 border border-light rounded p-2" id="signup-bg">{% trans "Sign Up" %}
         &raquo;</button>
     </form>
-</div>
+  </div>
   {% endblock %}
