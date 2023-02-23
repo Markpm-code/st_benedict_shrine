@@ -6,9 +6,9 @@
 
 {% load crispy_forms_tags  %}
 
-<div class=" mb-3 " style="margin-top:200px;">
-    <div class=" row">
-        <div class="col-lg-12 text-center">
+<div class=" mb-3 " style="margin-top:180px;">
+    <div class=" row ">
+        <div class="col-lg-12 text-center mt-4">
             <h3 class="page-heading text-color">Create a Booking</h3>
             <hr class=" w-75 mx-auto mt-2 text-color mb-4">
             <!-- Container for the error message if a double booking is made. -->
@@ -17,7 +17,7 @@
                 <form method="POST" action="{% url 'booking' %}" class=" mb-4 ">
                     {{ booking_form.as_p}}
                     {% csrf_token %}
-                    <button type="submit" class="rounded border border-white" id="request-bg" value="Post">Request a
+                    <button type="submit" class="rounded border border-white mt-4" id="request-bg" value="Post">Request a
                         Booking</button>
                 </form>
         </div>
