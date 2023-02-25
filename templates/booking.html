@@ -14,12 +14,12 @@
             <!-- Container for the error message if a double booking is made. -->
             <h6 class="double-booking">{{ error }}</h6>
             <!-- The booking form can be found in the booking app in forms.py. -->
-                <form method="POST" action="{% url 'booking' %}" class=" mb-4  w-75 mx-auto">
-                    {{ booking_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="rounded border border-white mt-4" id="request-bg" value="Post">Submit a
-                        Booking</button>
-                </form>
+            <form method="POST" action="{% url 'booking' %}" class=" mb-4  w-75 mx-auto">
+                {{ booking_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="rounded border border-white mt-4" id="request-bg" value="Post">Submit a
+                    Booking</button>
+            </form>
         </div>
     </div>
 </div>
