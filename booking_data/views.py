@@ -120,12 +120,12 @@ def amend_reservation(request, reservation_id):
     to access the amend feature is an authenticated user,
     if not redirects to the sign in page.
     If the signed in user is authenticated
-    a copy of the reservation from the Booking database is created.
+    a copy of the reservation from the Booking_data database is created.
     The signed in users ID is then compared to the reservations user ID.
     If not equal they are redirected to the their own reservations.
     If equal an instance of the BookingForm with the reservation ID is created.
     This instance is then returned to the amend_booking template in context.
-    On a POST request, gets the amended data from the BookingForm,
+    On a POST request, gets the amended data from the Booking_dataForm,
     places the data in an instance. Checks that the instance is valid.
     If the instance is invalid the BookingForm is reloaded,
     It is populated with the information from the failed POST request.
@@ -144,6 +144,7 @@ def amend_reservation(request, reservation_id):
 
         if current_user == reservation.user:
             context = {
+                "lead": reservation.lead,
                 "email": reservation.email,
                 "mobile": reservation.mobile,
                 "date": reservation.date,

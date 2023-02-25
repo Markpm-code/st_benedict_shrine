@@ -8,6 +8,12 @@ class Booking_dataForm(forms.ModelForm):
     """
     this is a test for booking form
     """
+    lead = forms.CharField(
+        label= 'Name', 
+        required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Name', 'class': 'center'}),
+    )  
+
     mobile = forms.CharField(
         label='Contact Number',
         required=True,
@@ -52,7 +58,7 @@ class Booking_dataForm(forms.ModelForm):
         model = Booking_data
 
         fields = (
-            'mobile', 'date', 'time', 'notes', 'attendees',
+            'lead','mobile', 'date', 'time', 'notes', 'attendees',
         )
 
         widgets = {
