@@ -1,4 +1,4 @@
-""" This module contains the database models for the booking app. """
+""" This module contains the database models for the booking_data app. """
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -12,7 +12,7 @@ STATUS = ((0, "pending"), (1, "accepted"), (2, "declined"))
 
 class Booking_data(models.Model):
     """
-    The model for the booking app.
+    The model for the booking_data app.
     Inherits the user from account sign up.
     Stores the booking: lead, email, mobile, date, time
     and how many guests for each individual booking.

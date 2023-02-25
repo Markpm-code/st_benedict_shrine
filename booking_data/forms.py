@@ -11,20 +11,20 @@ class Booking_dataForm(forms.ModelForm):
     mobile = forms.CharField(
         label='Contact Number',
         required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Mobile'}),
+        widget=forms.TextInput(attrs={'placeholder': 'Mobile', 'class': 'center'}),
     )
 
     date = forms.DateField(
         label='Date of Booking',
         required=True,
-        widget=DatePickerInput(),
+        widget=DatePickerInput(attrs={'class': 'text-center'}),
        
     )
 
     time = forms.TimeField(
         label='Arrival Time',
         required=True,
-        widget=TimePickerInput(),
+        widget=TimePickerInput(attrs={'class': 'text-center'}),
        
     )
 
