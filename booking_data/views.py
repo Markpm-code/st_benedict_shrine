@@ -37,7 +37,6 @@ def booking(request):
                 user = request.user  # For use in logic below.
                 current_booking = booking_form.save(commit=False)
                 current_booking.user = user
-                current_booking.lead = user.lead #f'{user.first_name} {user.last_name}'
                 current_booking.email = user.email
 
                 try:
