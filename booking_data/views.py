@@ -158,7 +158,9 @@ def amend_reservation(request, reservation_id):
 
                 if booking_form.is_valid():
                     updated_booking = booking_form.save(commit=False)
+                    current_booking = booking_form.delete()
                     updated_booking.status = 0
+
                     try:
                         updated_booking.save()
                     except IntegrityError as error:

@@ -17,10 +17,10 @@
                     <div class="card mb-4">
                         <div class="card-body border border-danger">
                             <!-- Displays the reservations date and time as title. -->
-                            <h4 class='card-title fw-normal text-center'>{{ reservation.date }} at
+                            <h4 class='card-title fw-normal text-center fw-bold fs-4' style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at
                                 {{ reservation.time }}</h4>
                             <!-- Displays the booking lead. -->
-                            <h6 class="fw-normal">{{ reservation.lead }}</h6>
+                            <h6 class="fw-bold fs-4" style="font-family:'Times New Roman', Times, serif;">{{ reservation.lead }}</h6>
                             <div class='card-text'>
                                 <!-- Displays the provided mobile. -->
                                 <p><i class="fas fa-phone"></i> {{ reservation.mobile }}</p>
@@ -46,9 +46,9 @@
                             <div class='text-center'>
                                 <!-- Triggers 'cancel' modal. -->
                                 <button data-bs-toggle='modal' data-bs-target='#cancel'
-                                    class="btn btn-secondary text-white">Cancel</button>
+                                    class="btn " id="cancel-bg">Cancel</button>
                                 <!-- Redirects to the amend reservation page. -->
-                                <a class="btn" id="amend-bg" href="/amend/{{ reservation.id }}">Amend</a>
+                                <a class="btn btn-secondary text-white"  href="/amend/{{ reservation.id }}">Amend</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-center">
-                                <h5 class='card-title text-uppercase'>{{ reservation.date }} at {{ reservation.time }}
+                                <h5 class='card-title fw-bold fs-4' style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at {{ reservation.time }}
                                 </h5>
                                 <p>Number of Attendees: {{ reservation.attendees }}</p>
                             </div>
