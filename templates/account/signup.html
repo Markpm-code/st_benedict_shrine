@@ -5,6 +5,9 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
+
+{% load crispy_forms_tags  %}
+
 <div class="container-fluid" id="signup">
   <div class="signup">
     <p class="fs-5 text-color fst-italic">{% blocktrans %}Please sign up at <span class="fs-2">St.
@@ -15,13 +18,13 @@
     <p class="mt-4">{% blocktrans %}Already have an account? Then please <a
         href="{{ login_url }}">Login.</a>{% endblocktrans %}</p>
 
-    <form class="signup mt-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <form class="signup w-50 mx-auto" style="margin-bottom: -90px;" method="post" action="{% url 'account_signup' %}">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form | crispy }}
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-      <button type="submit" class="mb-4 border border-light rounded p-2" id="signup-bg">{% trans "Sign Up" %}
+      <button type="submit" class=" border border-light rounded p-2" id="signup-bg">{% trans "Sign Up" %}
         &raquo;</button>
     </form>
   </div>

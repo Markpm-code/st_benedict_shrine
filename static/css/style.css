@@ -142,7 +142,7 @@ body {
     }
 
     #login, #signup {
-        margin: 140px 0 50px;
+        margin: 140px 0 ;
     }
 
     .logout {
