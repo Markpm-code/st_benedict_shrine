@@ -123,7 +123,7 @@ def amend_reservation(request, reservation_id):
     a copy of the reservation from the Booking_data database is created.
     The signed in users ID is then compared to the reservations user ID.
     If not equal they are redirected to the their own reservations.
-    If equal an instance of the BookingForm with the reservation ID is created.
+    If equal an instance of the Booking_dataForm with the reservation ID is created.
     This instance is then returned to the amend_booking template in context.
     On a POST request, gets the amended data from the Booking_dataForm,
     places the data in an instance. Checks that the instance is valid.
@@ -158,7 +158,6 @@ def amend_reservation(request, reservation_id):
 
                 if booking_form.is_valid():
                     updated_booking = booking_form.save(commit=False)
-                    current_booking = booking_form.delete()
                     updated_booking.status = 0
 
                     try:

@@ -6,6 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="A website for shrine offering recollection,retreat, station of the cross and pilgrimage">
+  <meta name="keywords" content="mass, recollection, retreat, shrine, pilgrimage, sinulog mass, station of the cross">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!--Google fonts-->
@@ -47,14 +50,11 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="{% url 'services.html' %}">Station of the Cross</a></li>
               <li><a class="dropdown-item" href="{% url 'services.html' %}#recollection-section">Recollection</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Mountain Trail Walk</a></li>
             </ul>
         </ul>
         {% if user.is_authenticated %}
-          <a class="text-decoration-none text-white mx-auto ">Hello {{ user.username }}, Welcome to <span class="text-color fs-4 fs-5">St.Benedict!</span></a>
+        <a class="text-decoration-none text-white mx-auto ">Hello {{ user.username }}, Welcome to <span
+            class="text-color fs-4 fs-5">St.Benedict!</span></a>
         {% endif %}
         <form class="d-flex">
           {% if user.is_authenticated %}
@@ -106,6 +106,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>
