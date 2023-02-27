@@ -30,6 +30,8 @@ body {
 }
 
 #images {
+    width: 100%;
+    height:auto;
     clear: both;
     line-height: 0;
     column-count: 3;
