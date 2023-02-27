@@ -96,7 +96,7 @@ class ReservationList(generic.ListView):
         if failed redirects to the login page.
         If passes uses the inbuilt get method to filter reservations,
         by ones with the authorized users ID. Then calls the sort method.
-        Only upcoming reservations are dispayed.
+        Only upcoming reservations are displayed.
         Renders to the 'reservations.html' template.
         """
         if request.user.is_authenticated:
@@ -158,6 +158,7 @@ def amend_reservation(request, reservation_id):
 
                 if booking_form.is_valid():
                     updated_booking = booking_form.save(commit=False)
+                    current_booking.delete()
                     updated_booking.status = 0
 
                     try:
