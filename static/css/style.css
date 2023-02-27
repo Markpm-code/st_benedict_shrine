@@ -109,12 +109,6 @@ body {
     background: linear-gradient(rgb(245, 209, 201), #ffffff, rgb(238, 185, 174));
 }
 
-/*services*/
-#container-bg {
-    background: linear-gradient(#ffffff, rgb(238, 185, 174), #f5efef);
-    margin-top: 30px;
-}
-
 /*story page */
 #story-p {
     display: inline;
