@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Berkshire Swash', cursive;
+    min-height: 84vh;/* This height aids the sticky footer when content is less the reservations page*/
 }
 
 /* Landing page image*/
@@ -104,9 +105,11 @@ body {
     color: brown;
 }
 
-/*footer background*/
+/*footer background & sticky position to keep the footer in the bottom when reservations page has less content*/
 #footer-bg {
     background: linear-gradient(rgb(245, 209, 201), #ffffff, rgb(238, 185, 174));
+    position: sticky;
+    top: 100%;
 }
 
 /*story page */

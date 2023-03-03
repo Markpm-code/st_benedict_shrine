@@ -9,6 +9,8 @@
             <h2 class="page-heading text-center text-color">Reservations</h2>
             <hr class=" w-75 mx-auto mt-2 text-color mb-4">
             <p class="text-center text-color">Manage/View your reservations here.</p>
+            <p class="text-center text-color">Please click the <span class="text-decoration-underline">make a booking
+                    here</span> button below if you have not created one yet or would like to add a booking.</p>
             <p>{{ reservation.messages }}</p>
             <div class="row">
                 <!-- Iterates over the reservations variable within the ReservationList on views. -->
@@ -18,10 +20,12 @@
                     <div class="card mb-4">
                         <div class="card-body border border-danger">
                             <!-- Displays the reservations date and time as title. -->
-                            <h4 class='card-title fw-normal text-center fw-bold fs-4' style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at
+                            <h4 class='card-title fw-normal text-center fw-bold fs-4'
+                                style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at
                                 {{ reservation.time }}</h4>
                             <!-- Displays the booking lead. -->
-                            <h6 class="fw-bold fs-4" style="font-family:'Times New Roman', Times, serif;">{{ reservation.lead }}</h6>
+                            <h6 class="fw-bold fs-4" style="font-family:'Times New Roman', Times, serif;">
+                                {{ reservation.lead }}</h6>
                             <div class='card-text'>
                                 <!-- Displays the provided mobile. -->
                                 <p><i class="fas fa-phone"></i> {{ reservation.mobile }}</p>
@@ -30,7 +34,8 @@
                                 <!-- Displays the number of guests for the specific reservation. -->
                                 <p>Number of attendees: {{ reservation.attendees }}</p>
                                 <!-- Contains the button for the modal that details any special requirements made. Stored within notes on the Booking modal. -->
-                                <button data-bs-toggle='modal' data-bs-target='#notes' class="btn" id="requirements-bg">Special
+                                <button data-bs-toggle='modal' data-bs-target='#notes' class="btn"
+                                    id="requirements-bg">Special
                                     Requirements <i class="fas fa-location-arrow"></i></button>
                                 <!-- if/else loop for displaying the current status of the reservation. -->
                                 <div class='text-center h6'>
@@ -46,10 +51,10 @@
                             <!-- Contains the buttons that allows the user to cancel or amend the reservation. -->
                             <div class='text-center'>
                                 <!-- Triggers 'cancel' modal. -->
-                                <button data-bs-toggle='modal' data-bs-target='#cancel'
-                                    class="btn " id="cancel-bg">Cancel</button>
+                                <button data-bs-toggle='modal' data-bs-target='#cancel' class="btn "
+                                    id="cancel-bg">Cancel</button>
                                 <!-- Redirects to the amend reservation page. -->
-                                <a class="btn btn-secondary text-white"  href="/amend/{{ reservation.id }}">Amend</a>
+                                <a class="btn btn-secondary text-white" href="/amend/{{ reservation.id }}">Amend</a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +64,7 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-header"  id="requirements-bg">
+                            <div class="modal-header" id="requirements-bg">
                                 <h5 class="modal-title " id="notes">Special Requirements</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
@@ -86,7 +91,9 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-center">
-                                <h5 class='card-title fw-bold fs-4' style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at {{ reservation.time }}
+                                <h5 class='card-title fw-bold fs-4'
+                                    style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at
+                                    {{ reservation.time }}
                                 </h5>
                                 <p>Number of Attendees: {{ reservation.attendees }}</p>
                             </div>
@@ -107,8 +114,9 @@
             </div>
             <br>
         </div>
-        
-        <a href="{% url 'booking' %}" class="text-center"><button class="btn btn-secondary mt-4">Make another booking here</button></a>
+
+        <a href="{% url 'booking' %}" class="text-center"><button class="btn btn-secondary mt-4">Make a booking
+                here</button></a>
     </div>
 </div>
 <br>
