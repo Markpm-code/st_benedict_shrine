@@ -9,6 +9,7 @@
             <h2 class="page-heading text-center text-color">Reservations</h2>
             <hr class=" w-75 mx-auto mt-2 text-color mb-4">
             <p class="text-center text-color">Manage/View your reservations here.</p>
+            <p>{{ reservation.messages }}</p>
             <div class="row">
                 <!-- Iterates over the reservations variable within the ReservationList on views. -->
                 {% for reservation in reservations %}

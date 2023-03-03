@@ -101,7 +101,7 @@ class BookingReservationList(generic.ListView):
         if failed redirects to the login page.
         If passes uses the inbuilt get method to filter reservations,
         by ones with the authorized users ID. Then calls the sort method.
-        Only upcoming reservations are dispayed.
+        Only upcoming reservations are displayed.
         Renders to the 'reservations.html' template.
         """
         if request.user.is_authenticated:
@@ -117,56 +117,25 @@ class BookingReservationList(generic.ListView):
 
         else:
             return redirect(reverse("account_login"))
+            
 
 def AmendBookingReservationList(request,reservation_id):  
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
 
-        if current_user == reservation.user:
-            context = {
-                "mobile": reservation.mobile,
-                "date": reservation.date,
-                "time": reservation.time,
-                "notes": reservation.notes,
-                "attendees": reservation.attendees
-            }
-
-            if request.method == 'POST':
-                booking_form = Booking_dataForm(request.POST, instance=reservation)
-
-                if booking_form.is_valid():
-                    updated_booking = booking_form.save(commit=False)
-                    updated_booking.status = 0
-                    try:
-                        updated_booking.save()
-                    except IntegrityError as error:
-                        error = (
-                            'You have already requested this reservation'
-                        )
-                        return render(request, 'amend_booking.html', {
-                            "booking_form": Booking_dataForm(request.POST),
-                            'error': error,
-                        })
-
-                    return redirect(reverse("reservations"))
-
-                else:
-                    return render(request, 'amend_booking.html', {
-                        "booking_form": Booking_dataForm(request.POST)
-                    })
-
-            else:
-                return render(request, 'amend_booking.html', {
-                        "booking_form": Booking_dataForm(context)
-                    })
-
+        if request.method == 'POST':
+            booking_form = Booking_dataForm(request.POST, instance=reservation)
+            if booking_form.is_valid():
+                booking_form.save()
+                messages.success(request, 'Booking updated successfully.')
+                return redirect(reverse("reservations"))
         else:
-            return redirect(reverse("reservations"))
-
+            booking_form =Booking_dataForm(instance=reservation) 
+        return render(request, 'amend_booking.html', {'booking_form': Booking_dataForm, 'reservation':reservation})  
     else:
-        return redirect(reverse("account_login"))
-
+        return redirect(reverse("account_login"))             
+       
 
 def cancel_reservation(request, reservation_id):
     """
