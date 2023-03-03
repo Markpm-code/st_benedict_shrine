@@ -1,6 +1,10 @@
 import datetime
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic
+from django.views.generic.edit import UpdateView
+from booking_data.models import Booking_data
+from django.contrib import messages
+from django.urls import reverse_lazy
 from django.db import IntegrityError
 from .models import Booking_data
 from .forms import Booking_dataForm
@@ -37,6 +41,7 @@ def booking(request):
                 user = request.user  # For use in logic below.
                 current_booking = booking_form.save(commit=False)
                 current_booking.user = user
+                current_booking.lead = f'{user.first_name} {user.last_name}'
                 current_booking.email = user.email
 
                 try:
@@ -66,7 +71,7 @@ def booking(request):
         return redirect(reverse("account_login"))
 
 
-class ReservationList(generic.ListView):
+class BookingReservationList(generic.ListView):
     """
     Each individual booking within the Booking model,
     is now referred to as a reservation for clarity.
@@ -96,7 +101,7 @@ class ReservationList(generic.ListView):
         if failed redirects to the login page.
         If passes uses the inbuilt get method to filter reservations,
         by ones with the authorized users ID. Then calls the sort method.
-        Only upcoming reservations are displayed.
+        Only upcoming reservations are dispayed.
         Renders to the 'reservations.html' template.
         """
         if request.user.is_authenticated:
@@ -113,39 +118,13 @@ class ReservationList(generic.ListView):
         else:
             return redirect(reverse("account_login"))
 
-
-def amend_reservation(request, reservation_id):
-    """
-    Uses an if/else statement to assert the user attempting
-    to access the amend feature is an authenticated user,
-    if not redirects to the sign in page.
-    If the signed in user is authenticated
-    a copy of the reservation from the Booking_data database is created.
-    The signed in users ID is then compared to the reservations user ID.
-    If not equal they are redirected to the their own reservations.
-    If equal an instance of the Booking_dataForm with the reservation ID is created.
-    This instance is then returned to the amend_booking template in context.
-    On a POST request, gets the amended data from the Booking_dataForm,
-    places the data in an instance. Checks that the instance is valid.
-    If the instance is invalid the BookingForm is reloaded,
-    It is populated with the information from the failed POST request.
-    If valid, a try/except statement is then used to ensure the booking
-    meets the Booking models unique_booking constraint.
-    If it fails the error message is returned as context
-    along with the POST data and displayed to the user.
-    If it passes the existing reservation is updated with the new information
-    provided in the POST request and has it's status set to 'pending' or 0
-    before it is saved to the database.
-    The user is then redirected to the reservations page.
-    """
+def AmendBookingReservationList(request,reservation_id):  
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
 
         if current_user == reservation.user:
             context = {
-                "lead": reservation.lead,
-                "email": reservation.email,
                 "mobile": reservation.mobile,
                 "date": reservation.date,
                 "time": reservation.time,
@@ -158,9 +137,7 @@ def amend_reservation(request, reservation_id):
 
                 if booking_form.is_valid():
                     updated_booking = booking_form.save(commit=False)
-                    current_booking.delete()
                     updated_booking.status = 0
-
                     try:
                         updated_booking.save()
                     except IntegrityError as error:
@@ -215,4 +192,5 @@ def cancel_reservation(request, reservation_id):
             return redirect(reverse("reservations"))
 
     else:
-        return redirect(reverse("account_login"))
+        return redirect(reverse("account_login"))             
+           
