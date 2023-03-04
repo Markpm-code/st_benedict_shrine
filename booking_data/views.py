@@ -41,7 +41,6 @@ def booking(request):
                 user = request.user  # For use in logic below.
                 current_booking = booking_form.save(commit=False)
                 current_booking.user = user
-                current_booking.lead = f'{user.first_name} {user.last_name}'
                 current_booking.email = user.email
 
                 try:
@@ -117,7 +116,7 @@ class BookingReservationList(generic.ListView):
 
         else:
             return redirect(reverse("account_login"))
-            
+
 
 def AmendBookingReservationList(request,reservation_id):  
     if request.user.is_authenticated:
