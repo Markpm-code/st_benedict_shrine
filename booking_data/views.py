@@ -38,6 +38,7 @@ def booking(request):
             if booking_form.is_valid():
                 user = request.user  # For use in logic below.
                 current_booking = booking_form.save(commit=False)
+                messages.success(request, 'Booking Successful')
                 current_booking.user = user
                 current_booking.email = user.email
 

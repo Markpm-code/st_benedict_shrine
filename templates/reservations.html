@@ -11,7 +11,13 @@
             <p class="text-center text-color">Manage/View your reservations here.</p>
             <p class="text-center text-color">Please click the <span class="text-decoration-underline">make a booking
                     here</span> button below if you have not created one yet or would like to add a booking.</p>
-            <p>{{ reservation.messages }}</p>
+            {% for msg  in messages %}
+                <div class="alert alert-secondary alert-dismissible fade show text-center text-color  mx-auto container"
+                    role="alert">
+                    {{ msg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
             <div class="row">
                 <!-- Iterates over the reservations variable within the ReservationList on views. -->
                 {% for reservation in reservations %}
@@ -24,7 +30,7 @@
                                 style="font-family:'Times New Roman', Times, serif;">{{ reservation.date }} at
                                 {{ reservation.time }}</h4>
                             <!-- Displays the booking lead. -->
-                            <h6 class=" fs-5" >
+                            <h6 class=" fs-5">
                                 {{ reservation.lead }}</h6>
                             <div class='card-text'>
                                 <!-- Displays the provided mobile. -->
