@@ -1,10 +1,8 @@
 import datetime
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic
-from django.views.generic.edit import UpdateView
 from booking_data.models import Booking_data
 from django.contrib import messages
-from django.urls import reverse_lazy
 from django.db import IntegrityError
 from .models import Booking_data
 from .forms import Booking_dataForm
