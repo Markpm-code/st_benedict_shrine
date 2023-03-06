@@ -47,6 +47,7 @@ class Booking_dataForm(forms.ModelForm):
         label='Number of Attendees',
         required=True,
         widget=forms.TextInput(attrs={'placeholder': 'Attendess'}),
+        validators=[validators.validate_attendees_size],
     )
 
     class Meta:

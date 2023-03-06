@@ -60,22 +60,17 @@ def validate_open_day(value):
         )
 
 
-def validate_guest_size(value):
+def validate_attendees_size(value):
     """
     A custom validation function.
-    intended for use on the 'guests' field of the BookingForm.
-    If input integer is greater than 8,
+    intended for use on the 'guests' field of the Booking_dataForm.
+    If input integer is less than 10,
     validation is failed and the custom error message is returned.
-    Ensures input integer is also greater than 0.
+    If value is equal to zero, a validation message pops-up alerting the user.
     """
-    if value > 8:
+    if value < 10:
         raise ValidationError(
-            'For reservations of more than 8 guests, please call and arrange',
-            params={'value': value},
-        )
-
-    elif value < 1:
-        raise ValidationError(
-            'Please state how many guests will be attending',
+            'We do not accept booking reservation of less than 10 attendees.\n'
+            'Attendees must be at least 10 attending for a booking to be accepted.',
             params={'value': value},
         )
