@@ -78,7 +78,7 @@ class BookingReservationList(generic.ListView):
 
     def sort(self, bookings):
         """
-        A helper method for the ReservationsList class.
+        A helper method for the BookingReservationsList class.
         Takes the bookings variable created in the get method.
         Each individual booking from this vairable is iterated over,
         all instances are checked to ensure the date field is a
