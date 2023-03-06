@@ -151,8 +151,11 @@ def cancel_reservation(request, reservation_id):
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
 
+
         if current_user == reservation.user:
             reservation.delete()
+            messages.success(request, 'Booking cancelled successfully.')
+
             return redirect(reverse("reservations"))
 
         else:
