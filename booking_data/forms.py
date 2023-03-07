@@ -24,14 +24,14 @@ class Booking_dataForm(forms.ModelForm):
         label='Date of Booking',
         required=True,
         widget=DatePickerInput(attrs={'class': 'text-center'}),
-       
+        validators=[validators.validate_future_date],
     )
 
     time = forms.TimeField(
         label='Arrival Time',
         required=True,
         widget=TimePickerInput(attrs={'class': 'text-center'}),
-       
+        validators=[validators.validate_arrival_time],
     )
 
     notes = forms.CharField(

@@ -4,16 +4,16 @@ import datetime
 from django.core.exceptions import ValidationError
 
 
-def validate_opening_hour(value):
+def validate_arrival_time(value):
     """
     A custom validation function.
-    Intended for use on the time field of the BookingForm.
-    Ensures the input value is between 11AM and 9PM.
+    Intended for use on the time field of the Booking_dataForm.
+    Ensures the input value is between 8AM and 1 PM.
     If validation is failed the custom error message is returned.
     """
-    if not 11 <= int(value.hour) <= 21:
+    if not 8 <= int(value.hour) <= 13:
         raise ValidationError(
-            'We only take reservations between 11AM & 9PM',
+            'We only accepts arrivals beteween 8 AM to 1 PM.',
             params={'value': value},
         )
 
@@ -21,7 +21,7 @@ def validate_opening_hour(value):
 def validate_future_date(value):
     """
     A custom validation function.
-    Intended for use on date field of the BookingForm.
+    Intended for use on date field of the Booking_dataForm.
     Using the datetime method datetime.date.today
     ensures the input value is a future date.
     If validation is failed the custom error message is returned.
@@ -35,27 +35,7 @@ def validate_future_date(value):
 
     elif value == datetime.date.today():
         raise ValidationError(
-            'Please call to make same day reservations',
-            params={'value': value},
-        )
-
-
-def validate_open_day(value):
-    """
-    A custom validation function.
-    Intended for use on the date field of the BookingForm.
-    Uses the Weekday method of the datetime library.
-    Ensures the input value is not a Monday or a Sunday.
-    If validation is failed the custom error message is returned.
-    """
-    if value.weekday() == 0:
-        raise ValidationError(
-            'We are closed on a Monday, please choose a differant date',
-            params={'value': value},
-        )
-    elif value.weekday() == 6:
-        raise ValidationError(
-            'We are closed on a Sunday, please choose a differant date',
+            'Booking must be not the current date.',
             params={'value': value},
         )
 

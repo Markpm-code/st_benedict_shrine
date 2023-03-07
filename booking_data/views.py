@@ -145,7 +145,8 @@ def cancel_reservation(request, reservation_id):
     The signed in users ID is then compared to the reservations user ID.
     If not equal they are redirected to the sign in page.
     If equal the reservation is deleted from the database via its unique id,
-    the user is then redirected back to the reservations.html page.
+    the user is then redirected back to the reservations.html page and
+    a message of Booking cancelled successfully pops up.
     """
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
