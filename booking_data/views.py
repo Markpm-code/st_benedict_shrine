@@ -73,7 +73,7 @@ class BookingReservationList(generic.ListView):
     """
     Each individual booking within the Booking model,
     is now referred to as a reservation for clarity.
-    Class based view that inherits from the Booking model.
+    Class based view that inherits from the Booking_data model.
     """
     model = Booking_data
 
@@ -117,7 +117,31 @@ class BookingReservationList(generic.ListView):
             return redirect(reverse("account_login"))
 
 
-def AmendBookingReservationList(request,reservation_id):  
+def AmendBookingReservationList(request,reservation_id): 
+     """
+    Uses an if/else statement to assert the user attempting
+    to access the amend feature is an authenticated user,
+    if not redirects to the sign in page.
+    If the signed in user is authenticated
+    a copy of the reservation from the Booking_data database is created.
+    The signed in users ID is then compared to the reservations user ID.
+    If not equal they are redirected to the their own reservations.
+    If equal an instance of the Booking_dataForm with the reservation ID is created.
+    This instance is then returned to the amend_booking.html template in context.
+    On a POST request, gets the amended data from the Booking_dataForm,
+    places the data in an instance. Checks that the instance is valid.
+    If the instance is invalid the Booking_dataForm is reloaded,
+    It is populated with the information from the failed POST request.
+    If valid, a try/except statement is then used to ensure the booking
+    meets the Booking_data models unique_booking constraint.
+    If it fails the error message is returned as context
+    along with the POST data and displayed to the user.
+    If it passes the existing reservation is updated with the new information
+    provided in the POST request and has it's status set to 'pending' or 0
+    before it is saved to the database.
+    The user is then redirected to the reservations page and a  
+    message of Booking updated successfully pops up.
+    """ 
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
@@ -174,7 +198,7 @@ def cancel_reservation(request, reservation_id):
     to access the cancel feature is an authenticated user,
     if not redirects to the sign in page.
     If the signed in user is authenticated
-    a copy of the reservation from the Booking database is created.
+    a copy of the reservation from the Booking_data database is created.
     The signed in users ID is then compared to the reservations user ID.
     If not equal they are redirected to the sign in page.
     If equal the reservation is deleted from the database via its unique id,

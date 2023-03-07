@@ -6,7 +6,7 @@ from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
 
 
-# A tuple to hold the status key for the Booking model.
+# A tuple to hold the status key for the Booking_data model.
 STATUS = ((0, "pending"), (1, "accepted"), (2, "declined"))
 
 
