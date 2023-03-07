@@ -36,9 +36,9 @@ def booking(request):
             booking_form = Booking_dataForm(request.POST)
 
             if booking_form.is_valid():
-                user = request.user  # For use in logic below.
+                user = request.user  
                 current_booking = booking_form.save(commit=False)
-                messages.success(request, 'Booking Successful')
+                messages.success(request, 'Booking successful.')
                 current_booking.user = user
                 current_booking.email = user.email
 
