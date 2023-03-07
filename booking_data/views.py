@@ -122,18 +122,51 @@ def AmendBookingReservationList(request,reservation_id):
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
 
-        if request.method == 'POST':
-            booking_form = Booking_dataForm(request.POST, instance=reservation)
-            if booking_form.is_valid():
-                booking_form.save()
-                messages.success(request, 'Booking updated successfully.')
-                return redirect(reverse("reservations"))
+        if current_user == reservation.user:
+            context = {
+                "mobile": reservation.mobile,
+                "date": reservation.date,
+                "time": reservation.time,
+                "notes": reservation.notes,
+                "attendees": reservation.attendees
+            }
+
+            if request.method == 'POST':
+                booking_form = Booking_dataForm(request.POST, instance=reservation)
+
+                if booking_form.is_valid():
+                    updated_booking = booking_form.save(commit=False)
+                    updated_booking.status = 0
+                    messages.success(request, 'Booking updated successfully.')
+                    try:
+                        updated_booking.save()
+                    except IntegrityError as error:
+                        error = (
+                            'You have already requested this reservation'
+                        )
+                        return render(request, 'amend_booking.html', {
+                            "booking_form": Booking_dataForm(request.POST),
+                            'error': error,
+                        })
+
+                    return redirect(reverse("reservations"))
+
+                else:
+                    return render(request, 'amend_booking.html', {
+                        "booking_form": Booking_dataForm(request.POST)
+                    })
+
+            else:
+                return render(request, 'amend_booking.html', {
+                        "booking_form": Booking_dataForm(context)
+                    })
+
         else:
-            booking_form =Booking_dataForm(instance=reservation) 
-        return render(request, 'amend_booking.html', {'booking_form': Booking_dataForm, 'reservation':reservation})  
+            return redirect(reverse("reservations"))
+
     else:
-        return redirect(reverse("account_login"))             
-       
+        return redirect(reverse("account_login"))
+   
 
 def cancel_reservation(request, reservation_id):
     """
