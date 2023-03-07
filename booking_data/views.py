@@ -118,7 +118,7 @@ class BookingReservationList(generic.ListView):
 
 
 def AmendBookingReservationList(request,reservation_id): 
-     """
+    """
     Uses an if/else statement to assert the user attempting
     to access the amend feature is an authenticated user,
     if not redirects to the sign in page.
@@ -142,6 +142,7 @@ def AmendBookingReservationList(request,reservation_id):
     The user is then redirected to the reservations page and a  
     message of Booking updated successfully pops up.
     """ 
+
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
