@@ -122,6 +122,11 @@ body {
     display: flex!important;
   }
 
+/*location and contact*/
+#loc_contact {
+    display:inline;
+}
+
 /*rezise images in smaller screen */
 @media (max-width: 414px) {
     #images {
