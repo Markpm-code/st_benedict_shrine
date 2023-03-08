@@ -113,18 +113,14 @@ body {
 }
 
 /*story page */
-#story-p {
-    display: inline;
-}
-
-#story-p-bg {
-    background: #f5efef;
-}
-
-#img-overlay {
-    height: 200px;
-    width: 200px;
-}
+.align-items-center {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+  }
+  .d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+  }
 
 /*rezise images in smaller screen */
 @media (max-width: 414px) {
