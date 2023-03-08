@@ -12,31 +12,33 @@
         <hr class=" w-75 mx-auto text-color">
         <h1 class="fs-1 text-color fw-bold">Services</h1>
     </div>
-    <div class="container-fluid" >
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title">Station of the Cross</h2>
-                        <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1674927169/nuns_in_front_of_the_cross_vmiaim.jpg"
-                            class="img-fluid  w-100 rounded" alt="nuns in front of the station of the cross">
-                        <p class="card-text"> Additional content here for services.</p>
-                        <a href="{% url 'booking' %}" class="btn btn-primary">Book now</a>
-                    </div>
+    <div>
+        <div class="col-sm-12 " id="recollection-section">
+            <div class="card">
+                <div class="card-body ">
+                    <h2 class="card-title">Station of the Cross</h2>
+                    <a target="_blank" href="https://res.cloudinary.com/da80v7xri/image/upload/v1678258412/nuns_in_front_of_the_cross2_co4wxg.jpg">
+                        <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1678258412/nuns_in_front_of_the_cross2_co4wxg.jpg"
+                            class="img-fluid h-auto w-100 rounded" alt="Nuns infront of the cross ">
+                    </a>    
+                    <p class="card-text mt-4"> Our Station of the Cross is very popular during easter season. To make sure to get a reservation booked, please click the Book now button below.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary" id="book-now">Book now &raquo</a>
                 </div>
             </div>
-            <div class="col-sm-6 " id="recollection-section">
-                <div class="card">
-                    <div class="card-body " >
-                        <h2 class="card-title">Recollection</h2>
-                        <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1674927325/received_707299553626413_wrrtq1.jpg"
-                            class="img-fluid  w-100 rounded" alt="group of people ">
-                        <p class="card-text"> Additional content here for services.</p>
-                        <a href="{% url 'booking' %}" class="btn btn-primary">Book now</a>
-                    </div>
+        </div>
+    </div>
+    <div>
+        <div class="col-sm-12 " id="recollection-section">
+            <div class="card">
+                <div class="card-body ">
+                    <h2 class="card-title">Recollection</h2>
+                    <a target="_blank" href="https://res.cloudinary.com/da80v7xri/image/upload/v1678257263/retreat1_zmnkeo.jpg">
+                        <img src="https://res.cloudinary.com/da80v7xri/image/upload/v1678257263/retreat1_zmnkeo.jpg"
+                            class="img-fluid  h-auto w-100 rounded" alt="group of people ">
+                    </a>    
+                    <p class="card-text mt-4"> We offer Recollection/Retreat services. To book a reservation, please click the Book now button below.</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary" id="book-now">Book now &raquo</a>
                 </div>
-                <!--this is a guide only-->
-                <h3>for more information, please contact us:</h3>
             </div>
         </div>
     </div>
