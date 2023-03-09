@@ -48,3 +48,15 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
  ![gallery page mobile device](./static/images/gallery_page_smaller_screen.png)
 
 
+# Our Story Page
+ * Here the user can read a little bit of story on how St Benedict's Garden of Life had all started.
+ * The image of a Priest is Fr Inting himself and the content of the story was provided by him.
+ * The second image was the very first structure built in the St. Benedict's garden of Life. 
+
+ ![our story page](./static/images/our_story.png)
+
+ ![our story page in a mobile device](./static/images/our_story_sm.png)
+ ![our story page in a mobile device](./static/images/our_story_sm1.png)
+
+
+
