@@ -59,4 +59,30 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
  ![our story page in a mobile device](./static/images/our_story_sm1.png)
 
 
+# Contact Page
+ * In this page the location and Contact us are displayed alongside in a desktop view using an inline display.
+ * In a mobile device, the view is a block display
+
+ ![contact](./static/images/contact.png)
+
+ ![contact mobile device](./static/images/contact_sm.png)
+
+
+# Services 
+ * The services being offered on this site is an imagination but can be use in an actual circumstances.
+ * A book now button below the images will bring the user to the booking form page.
+ * Images are all taken on site during previous activities in St Benedict's Garden of Life.
+
+ ![services screenshot](./static/images/services.png)
+
+ ![services1 screenshot](./static/images/services1.png)
+
+# Others
+ * " This project is submitted incomplete due to project submission deadline which I still cannot finished on time ". 
+
+
+
+
+
+
 
