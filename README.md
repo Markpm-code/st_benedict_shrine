@@ -14,7 +14,7 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 # Navigation
  * The navigation bar is featured in  seven pages.
  * When the user is not logged in the Sign Up and Log in button displays but when a user is logged in this disappears and replaced with Reservations and Log Out buttons including the username of the user and a welcome to St Benedict! message. A successfully signed message also displays in the reservations page.
- * THe Contact and Services uses dropdown to access the page.
+ * The Contact and Services uses dropdown to access the page.
  * The buttons are using a color combination of brown #FFFFFF with a hover effect.
  * It uses linear-gradient(to right, rgb(160, 48, 26), #FFFFFF) background color.
  * The hand praying icon is taken from font awesome.
@@ -34,4 +34,8 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
  ![home page](./static/images/hom_page.png) 
  
  ![home page when user signed in](./static/images/home_page_signed_in.png)
+
+ * This is how the homepage looks in a mobile device.
+
+ ![home page in mobile device](./static/images/home_page_smaller_screen.png)
 
