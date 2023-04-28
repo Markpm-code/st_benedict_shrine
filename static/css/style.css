@@ -90,13 +90,20 @@ body {
 }
 
 /*booking-link*/
-#book-now {
+#book-now,
+#stoc_booking,
+#recollection_booking {
     background-color: brown;
     color:#FFFFFF;
 }
 
-#book-now:hover {
-    background-color: #FFFFFF;
+#book-now:hover{
+    background-color:#FFFFFF ;
+    color: brown;
+}
+#stoc_booking:hover,
+#recollection_booking:hover {
+    background-color:#f1eeee ;
     color: brown;
 }
 
@@ -114,7 +121,7 @@ body {
 
 /*footer background & sticky position to keep the footer in the bottom when reservations page has less content*/
 #footer-bg {
-    background: linear-gradient(rgb(245, 209, 201), #ffffff, rgb(238, 185, 174));
+    background: linear-gradient(rgb(245, 209, 201), #FFFFFF, rgb(238, 185, 174));
     position: sticky;
     top: 100%;
 }
