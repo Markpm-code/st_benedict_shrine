@@ -149,6 +149,7 @@ def AmendBookingReservationList(request,reservation_id):
 
         if current_user == reservation.user:
             context = {
+                "lead": reservation.lead,
                 "mobile": reservation.mobile,
                 "date": reservation.date,
                 "time": reservation.time,
