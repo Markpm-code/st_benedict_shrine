@@ -73,7 +73,8 @@ body {
 }
 
 #login-bg:hover,
-#logout-bg:hover {
+#logout-bg:hover,
+#reservations-bg:hover {
     background-color: #FFFFFF;
     color: brown;
 }
@@ -91,7 +92,12 @@ body {
 /*booking-link*/
 #book-now {
     background-color: brown;
-    border: none;
+    color:#FFFFFF;
+}
+
+#book-now:hover {
+    background-color: #FFFFFF;
+    color: brown;
 }
 
 /*Gallery container*/
