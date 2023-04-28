@@ -13,7 +13,7 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 
 # Navigation
  * The navigation bar is featured in  seven pages.
- * When the user is not logged in the Sign Up and Log in button displays but when a user is logged in this disappears and replaced with Reservations and Log Out buttons including the username of the user and a welcome to St Benedict! message. A successfully signed message also displays in the reservations page.
+ * When the user is not logged in, the Sign Up and Log in button displays but when a user is logged in this disappears and replaced with Reservations and Log Out buttons including the username of the user and a welcome to St Benedict! message. A successfully signed message also displays in the reservations page.
  * The Contact and Services uses dropdown to access the page.
  * The buttons are using a color combination of brown #FFFFFF with a hover effect.
  * It uses linear-gradient(to right, rgb(160, 48, 26), #FFFFFF) background color.
@@ -28,7 +28,7 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 
  # Landing Page
   * The landing page image is the side view structure of the St Benedict's Garden main attraction in the hills of Sitio Migsale.
-  * It has a welcome messaage overlay and book now link to bring the user to the Log in page. The user will be ask to sign up first if the users have not created an account yet.
+  * It has a welcome message overlay and book now link to bring the user to the Log in page. The user will be ask to sign up first if the users have not created an account yet.
     Once the user is signed in, the user will be redirected back to the home page. The user can then click the book now button and brings the user to the booking form page. The user can also access the booking form page through the Reservations button and then click the make a booking here button.
 
  ![home page](./static/images/hom_page.png) 
@@ -69,7 +69,7 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 
 
 # Services 
- * The services being offered on this site is an imagination but can be use in an actual circumstances.
+ * The services being offered on this site is an imagination but can be use in the near future..
  * A book now button below the images will bring the user to the booking form page.
  * Images are all taken on site during previous activities in St Benedict's Garden of Life.
 
