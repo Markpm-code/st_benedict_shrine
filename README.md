@@ -77,12 +77,21 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 
  ![services1 screenshot](./static/images/services1.png)
 
-# Others
- * " This project is submitted incomplete due to project submission deadline which I still cannot finished on time ". 
+# Deployment
+## Setting up basic Django Project and Deploying to Heroku
+ * You can find the instructions [here](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit), a cheat sheet created by [Code Institute](https://codeinstitute.net/ie/)
 
+## Heroku Deployment 
+ * After following the instructions above
+   * Add another Config Var in Heroku's Settings, The key is PORT and the value is 8000
+   * Click Deploy tab in Heroku
+   * In the 'Deployment method' section select 'Github' and click the 'connect to Github' button to confirm.
+   * In the 'search' box enter the Github repository name for the project
+   * Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository.
 
-
-
-
-
+## Final Deployment
+ * In the (IDE) Integrated Development Environment:
+  * When development is complete change the debug setting to: DEBUG = False in settings.py   
+  * In Heroku settings config vars delete the DISABLE_COLLECTSTATIC
+  * In Heroku click the 'Deploy Branch' branch button. When deployment is successful, a message 'Your app is deployed to heroku. Click open app button and the The install worked successfully! Congratulations! messages will be displayed.
 
