@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-markpm-code-st-benedict--9sula8ff9k.us2.codeanyapp.com', 'localhost']
+ALLOWED_HOSTS = ['https://st-benedict.herokuapp.com/', 'localhost']
 
 
 # Application definition
