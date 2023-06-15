@@ -31,7 +31,7 @@ body {
 }
 
 #images {
-    width: 100%;
+    max-width: 100%;
     height:auto;
     clear: both;
     line-height: 0;
@@ -44,7 +44,7 @@ body {
 /*gallery images */
 #images>img {
     width: 100%;
-    height: auto;
+    height: 400px;
     border: 1px solid #FFFFFF;
     border-radius: 5px;
 }
@@ -142,6 +142,16 @@ body {
 }
 
 /*rezise images in smaller screen */
+@media (max-width: 715px) {
+    #images {
+        clear: both;
+        line-height: 0;
+        column-count: 2;
+        column-gap: 0px;
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 414px) {
     #images {
         clear: both;
