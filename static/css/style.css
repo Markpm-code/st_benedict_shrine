@@ -158,6 +158,16 @@ body {
 }
 
 /*rezise images in smaller screen */
+@media (max-width: 1280px) {
+    #images {
+        clear: both;
+        line-height: 0;
+        column-count: 3;
+        column-gap: 0px;
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     #images {
         clear: both;
