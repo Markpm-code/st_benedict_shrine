@@ -77,6 +77,30 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 
  ![services1 screenshot](./static/images/services1.png)
 
+# Agile methodology
+The Agile Methodolgy was not implemnented in the first submission of this project.
+
+Here is my implementation of Agile methodology to create User Stories using a template in Github
+* In the st_benedict_shrine repository
+* Click the settings tab and scroll down to issues section
+* Click the "Set up templates" button
+* On the dropdown selection, click Custom template
+* To make the file become part of the code repository, click "Propose changes" button
+* Add a commit message and then click the "Commit Changes" button
+* You can now use this template to create new user stories
+
+## Creating a Kanban Board
+* In the st_benedict_shrine repository , click the "Projects" tab
+* In the dropdown menu, click "New project"
+* Click the "New project" button to open a template selection
+* Select "Board" and customize the project name
+* Click the "Create" button
+* A new tab opens where you can track, moved and edit the status of the user stories
+* In the "Add item section" can also be used to add a user story and convert it into issues
+
+![User stories](./static/images/user_stories.png)
+
+
 # Deployment
 ## Setting up basic Django Project and Deploying to Heroku
  * You can find the instructions [here](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit), a cheat sheet created by [Code Institute](https://codeinstitute.net/ie/)
