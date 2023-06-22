@@ -8,7 +8,7 @@ St Bendict's has been open to the public for a quite sometime now servicing vari
 St Benedict's Garden of Life is a fully responsive website that allow users to book, update and delete a reservation. Only sign-up users are allowed to create a booking,
 otherwise the user can have a looked only at the St Benedict's Garden of life website.
 
-![responsive image](./static/images/responsive_stb.png)
+![responsive image](./static/images/responsive.png)
 
 
 # Navigation
