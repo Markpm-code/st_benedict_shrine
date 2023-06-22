@@ -41,7 +41,8 @@ otherwise the user can have a looked only at the St Benedict's Garden of life we
 
 # Gallery
  * In this page the user can take a look of the images taken from St Benedict'Garden of Life.
- * It has a column count of 3 in most devices and column count of 1 when it has a max-width of 414px. 
+ * It has a transition and animation effects and it also transforms when hovered to scale(1.2)
+ * It has a column count of 6 in a desktop view, column count of 3 in screen size max-width of 1024 px, column count of 2 in in screen size max-width of 715px and column count of 1 when it has a max-width of 414px. 
 
  ![gallery page](./static/images/gallery.png)
 
