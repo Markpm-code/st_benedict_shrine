@@ -114,10 +114,24 @@ Here is my implementation of Agile methodology to create User Stories using a te
  ![HTML Validation](./static/images/html_validation.png)
 
 ## CSS Validation
- * Used [W3C](https://jigsaw.w3.org/css-validator/) to validate CSS
+ * Used [W3C-Jigsaw](https://jigsaw.w3.org/css-validator/) to validate CSS.
  * Validated by URL directly from gitpod
 
  ![CSS Validation](./static/images/css_validation.png)
+
+ ## PYTHON Validation
+  * Used [CI Python Linter](https://pep8ci.herokuapp.com/) to validate Python codes.
+  * There are several errors such as:
+    * Whitespace in Models.py
+    * Line too long, blank line contains white space, and no newline at the end of file in validators.py
+    * Line too long, trailing whitespace, and blankline contains white space in forms.py
+    * Below screenshot is the Settings.py errors
+
+
+   ![Settings.py Erros](./static/images/settings_error.png)
+
+  * All errors are resolved, all clear and no errors found  after running it in [CI Python Linter](https://pep8ci.herokuapp.com/)
+
 
 # Deployment
 ## Setting up basic Django Project and Deploying to Heroku
