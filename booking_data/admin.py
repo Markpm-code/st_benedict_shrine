@@ -9,10 +9,14 @@ class Booking_dataAdmin(admin.ModelAdmin):
     """
     Allows admins a quick overview of all bookings,
     with the ability to filter by date and time for a precise overview.
-    Intended for making business decisions. Also allows for search by booking lead.
+    Intended for making business decisions.
+    Also allows for search by booking lead.
     Containts methods to accept or decline the bookings within the dropdown.
     """
-    list_display = ('lead', 'date', 'time', 'attendees', 'status', 'notes', 'mobile','email',)
+    list_display = (
+        'lead', 'date', 'time', 'attendees', 'status',
+        'notes', 'mobile', 'email',
+        )
     list_filter = ('date', 'time',)
     search_fields = ('lead',)
     actions = ['accept_booking', 'decline_booking']
@@ -36,5 +40,3 @@ class Booking_dataAdmin(admin.ModelAdmin):
         for reservation in queryset:
             reservation.status = 2
             reservation.save()
-
-
