@@ -6,18 +6,20 @@ from . import validators
 
 class Booking_dataForm(forms.ModelForm):
     """
-    this is a test for booking form
+    this is the  booking form
     """
     lead = forms.CharField(
-        label= 'Name',
+        label='Name',
         required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Name', 'class': 'center'}),
-    ) 
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Name', 'class': 'center'}),
+    )
 
     mobile = forms.CharField(
         label='Contact Number',
         required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Mobile', 'class': 'center'}),
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Mobile', 'class': 'center'}),
     )
 
     date = forms.DateField(
@@ -59,12 +61,10 @@ class Booking_dataForm(forms.ModelForm):
         model = Booking_data
 
         fields = (
-            'lead','mobile', 'date', 'time', 'notes', 'attendees',
+            'lead', 'mobile', 'date', 'time', 'notes', 'attendees',
         )
 
         widgets = {
             'date': DatePickerInput,
             'time': TimePickerInput,
         }
-
-       
