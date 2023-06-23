@@ -119,7 +119,7 @@ Here is my implementation of Agile methodology to create User Stories using a te
 
  ![CSS Validation](./static/images/css_validation.png)
 
- ## PYTHON Validation
+## PYTHON Validation
   * Used [CI Python Linter](https://pep8ci.herokuapp.com/) to validate Python codes.
   * There are several errors such as:
     * Whitespace in Models.py
@@ -130,7 +130,27 @@ Here is my implementation of Agile methodology to create User Stories using a te
 
    ![Settings.py Erros](./static/images/settings_error.png)
 
-  * All errors are resolved, all clear and no errors found  after running it in [CI Python Linter](https://pep8ci.herokuapp.com/)
+  * All errors are resolved, all clear and no errors found  after running it in Code Institute [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+
+## Lighthouse 
+ * Home Page Desktop Testing / Tested in incognito mode
+   * Desktop 
+
+ ![Desktop testing](./static/images/hp_desktop_lighthouse_test.png) 
+
+ * Home Page Mobile Testing / Tested in incognito mode
+   * Mobile
+
+ ![Mobile testing](./static/images/hp_mobile_lighthouse_test.png)
+
+ * Gallery Page Desktop Testing / Tested in incognito mode
+   * Desktop
+   * Gallery is the only page of the site that scores low in Performance, the rest of the pages scores high.
+
+ ![Desktop testing](./static/images/gallery_lighthouse_test.png)
+ 
+
 
 
 # Deployment
