@@ -89,6 +89,10 @@ Here is my implementation of Agile methodology to create User Stories using a te
 * To make the file become part of the code repository, click "Propose changes" button
 * Add a commit message and then click the "Commit Changes" button
 * You can now use this template to create new user stories
+* To view the Acceptance Criteria and Task , click [here](https://github.com/Markpm-code/st_benedict_shrine/issues) and then click each link of the user story
+
+![Issues](./static/images/issues.png)
+
 
 ## Creating a Kanban Board
 * In the st_benedict_shrine repository , click the "Projects" tab
@@ -101,6 +105,19 @@ Here is my implementation of Agile methodology to create User Stories using a te
 
 ![User stories](./static/images/user_stories.png)
 
+
+# Testing
+## HTML Validation
+ * Used [W3C](https://validator.w3.org/) to validate HTML
+ * Validated by URL directly from gitpod
+
+ ![HTML Validation](./static/images/html_validation.png)
+
+## CSS Validation
+ * Used [W3C](https://jigsaw.w3.org/css-validator/) to validate CSS
+ * Validated by URL directly from gitpod
+
+ ![CSS Validation](./static/images/css_validation.png)
 
 # Deployment
 ## Setting up basic Django Project and Deploying to Heroku
