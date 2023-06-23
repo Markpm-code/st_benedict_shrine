@@ -51,6 +51,7 @@ def validate_attendees_size(value):
     if value < 10:
         raise ValidationError(
             'We do not accept booking reservation of less than 10 attendees.\n'
-            'Attendees must be at least 10 attending for a booking to be accepted.',
+            'Attendees must be at least 10 attending for \n'
+            'a booking to be accepted.',
             params={'value': value},
         )

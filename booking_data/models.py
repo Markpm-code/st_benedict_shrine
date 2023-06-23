@@ -64,6 +64,3 @@ class Booking_data(models.Model):
         Defining this method is reccomended by Django.
         """
         return f'{self.date} {self.time}'
-        
-
-
