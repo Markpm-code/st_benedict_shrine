@@ -174,3 +174,15 @@ Here is my implementation of Agile methodology to create User Stories using a te
   * In Heroku settings config vars delete the DISABLE_COLLECTSTATIC
   * In Heroku click the 'Deploy Branch' branch button. When deployment is successful, a message 'Your app is deployed to heroku. Click open app button and the The install worked successfully! Congratulations! messages will be displayed.
 
+## Cloning the Repository
+ * How to Clone the Repository
+   * Copy this link https://github.com/Markpm-code/st_benedict_shrine
+   * In your IDE terminal, type git clone and paste the copied URL
+   * Then press enter
+
+## Forking the Repository   
+ * How to Fork the Repository
+  * Navigate to https://github.com/Markpm-code/st_benedict_shrine
+  * In the right side of the page under the "About" section.
+  * Click the fork or fork icon to create a copy of the original repository into your Github Account.
+
