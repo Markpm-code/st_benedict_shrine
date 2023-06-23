@@ -151,7 +151,10 @@ Here is my implementation of Agile methodology to create User Stories using a te
  ![Desktop testing](./static/images/gallery_lighthouse_test.png)
  
 
+## Responsiveness
+ * Used this site [Am I Responsive](https://ui.dev/amiresponsive) to check the St. Benedict's Garden of Life responsiveness
 
+ ![Responsive](./static/images/responsive.png)
 
 # Deployment
 ## Setting up basic Django Project and Deploying to Heroku
