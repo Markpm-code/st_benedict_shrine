@@ -36,7 +36,7 @@ def booking(request):
             booking_form = Booking_dataForm(request.POST)
 
             if booking_form.is_valid():
-                user = request.user  
+                user = request.user
                 current_booking = booking_form.save(commit=False)
                 messages.success(request, 'Booking successful.')
                 current_booking.user = user
@@ -117,7 +117,7 @@ class BookingReservationList(generic.ListView):
             return redirect(reverse("account_login"))
 
 
-def AmendBookingReservationList(request,reservation_id): 
+def AmendBookingReservationList(request, reservation_id):
     """
     Uses an if/else statement to assert the user attempting
     to access the amend feature is an authenticated user,
@@ -126,8 +126,9 @@ def AmendBookingReservationList(request,reservation_id):
     a copy of the reservation from the Booking_data database is created.
     The signed in users ID is then compared to the reservations user ID.
     If not equal they are redirected to the their own reservations.
-    If equal an instance of the Booking_dataForm with the reservation ID is created.
-    This instance is then returned to the amend_booking.html template in context.
+    If equal an instance of the Booking_dataForm with
+    the reservation ID is created.This instance is then returned to the
+    amend_booking.html template in context.
     On a POST request, gets the amended data from the Booking_dataForm,
     places the data in an instance. Checks that the instance is valid.
     If the instance is invalid the Booking_dataForm is reloaded,
@@ -139,9 +140,9 @@ def AmendBookingReservationList(request,reservation_id):
     If it passes the existing reservation is updated with the new information
     provided in the POST request and has it's status set to 'pending' or 0
     before it is saved to the database.
-    The user is then redirected to the reservations page and a  
+    The user is then redirected to the reservations page and a
     message of Booking updated successfully pops up.
-    """ 
+    """
 
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
@@ -158,7 +159,8 @@ def AmendBookingReservationList(request,reservation_id):
             }
 
             if request.method == 'POST':
-                booking_form = Booking_dataForm(request.POST, instance=reservation)
+                booking_form = Booking_dataForm(
+                    request.POST, instance=reservation)
 
                 if booking_form.is_valid():
                     updated_booking = booking_form.save(commit=False)
@@ -192,7 +194,7 @@ def AmendBookingReservationList(request,reservation_id):
 
     else:
         return redirect(reverse("account_login"))
-   
+
 
 def cancel_reservation(request, reservation_id):
     """
@@ -210,8 +212,6 @@ def cancel_reservation(request, reservation_id):
     if request.user.is_authenticated:
         reservation = get_object_or_404(Booking_data, id=reservation_id)
         current_user = request.user
-
-
         if current_user == reservation.user:
             reservation.delete()
             messages.success(request, 'Booking cancelled successfully.')
@@ -222,5 +222,4 @@ def cancel_reservation(request, reservation_id):
             return redirect(reverse("reservations"))
 
     else:
-        return redirect(reverse("account_login"))             
-           
+        return redirect(reverse("account_login"))
