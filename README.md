@@ -186,3 +186,10 @@ Here is my implementation of Agile methodology to create User Stories using a te
   * In the right side of the page under the "About" section.
   * Click the fork or fork icon to create a copy of the original repository into your Github Account.
 
+## Manual Testing
+### Navigation
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
