@@ -152,6 +152,14 @@ Here is my implementation of Agile methodology to create User Stories using a te
 | "Our Story " Link | Click Our Story | The user is directed to Our Story Page |
 | "Content & Images | Inspect story content and images | The story content and 2 images are present |
 
+### Services Page
+
+| Feature  | Action | Expected Result |
+| ------------- | ------------- | ------------- |
+| "Station of the cross" Link | Click Station of the cross | The user is directed to the Station of the Cross page |
+| "Book Now" button of the Station of the Cross Page | Click Book Now | The user is directed to the Log in page if not logged in. If Logged in, the user is directed to the Booking form page |
+| "Book Now" button of the Recollection Page | Click Book Now | The user is directed to the Log in page if not logged in. If Logged in, the user is directed to the Booking form page |
+
 # Testing
 ## HTML Validation
  * Used [W3C](https://validator.w3.org/) to validate HTML
