@@ -126,21 +126,31 @@ Here is my implementation of Agile methodology to create User Stories using a te
 | "Reservations" Link | Click Reservations | The user is directed to the "Reservations" page |
 | "Log Out" Link | Click Log out | The user is directed  to the "Log out" page |
 
-### Home
+### Home & Contact Pages
 
 | Feature  | Action | Expected Result |
 | ------------- | ------------- | ------------- |
 | "Book Now" button link | Click Book Now | The user is directed to the Log in page if not logged in. If Logged in, the user is directed to the Booking form page |
+| "Location" Contact dropdown menu | Click Location | The user is directed to the location page |
+|  "Contact Us" Contact dropdown menu | Click Contact Us | the user is directed to the Contact us page |
 | "Maps Directions" Link | Click Directions | The user is directed to a google maps tab to start getting the directions but in mobile device, the directions link display is hidden and only left with a "View larger map" link which may lead to unexpected result |
+| Navigation Controls and Functionality | Test Navigation Controls and Functionality | All Controls and Functionality are working |
 | "St. Benedict's Garden of life facebook page" link | Click the link | The user is directed to new tab of "St. Benedict's Garden of life facebook page" |
 
-### Gallery
+### Gallery Page
 
 | Feature  | Action | Expected Result |
 | ------------- | ------------- | ------------- |
 | "Gallery" link | Click Gallery | The images fades in effect is working |
 | "Images" | Hover images | The images scales to 1.2  when it is hovered |
 | "Responsiveness" | Test responsiveness of images | Images are responsive to smaller devices |
+
+### Our Story Page
+
+| Feature  | Action | Expected Result |
+| ------------- | ------------- | ------------- |
+| "Our Story " Link | Click Our Story | The user is directed to Our Story Page |
+| "Content & Images | Inspect story content and images | The story content and 2 images are present |
 
 # Testing
 ## HTML Validation
