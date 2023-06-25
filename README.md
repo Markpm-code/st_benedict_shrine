@@ -110,14 +110,21 @@ Here is my implementation of Agile methodology to create User Stories using a te
 
 | Feature  | Action | Expected Result |
 | ------------- | ------------- | ------------- |
-| Home Link   | Clicking the "Home Link" while the user is the different pages of the site  | The user is redirected back to the hompage  |
+| "Home" Link   | Clicking the "Home Link" while the user is the different pages of the site  | The user is redirected back to the hompage  |
 | St Benedict's Garden of Life as "Home Link"  | Clicking the "St Benedict's Garden of Life" while the user is the different pages of the site  | The user is redirected back to the hompage  |
-| Gallery Link | Clicking the "Gallery" in the navbar | User is directed to the Gallery page |
-| Our Story Link | Clicking the "Our Story" in the navbar | User is directed to the Our Story page | 
-| Contact Dropdown Menu | Click Contact dropdown menu | User have two options to click, the location and Contact Us. When clicked, the user is directed to both pages |
-| Services Dropdown Menu | Click Services dropdown menu | User have two options to click, the Station of the Cross and recollection. When clicked, the user is directed to both pages |
-| Sign Up Link | Click Sign Up | The user is directed to the Sign Up form page |
-| Log in Link | Click Log in | The user is directed to the Log in form page |
+| "Gallery Link" | Clicking the "Gallery" in the navbar | User is directed to the Gallery page |
+| "Our Story" Link | Clicking the "Our Story" in the navbar | User is directed to the Our Story page | 
+| "Contact" Dropdown Menu | Click Contact dropdown menu | User have two options to click, the location and Contact Us. When clicked, the user is directed to both pages |
+| "Services" Dropdown Menu | Click Services dropdown menu | User have two options to click, the Station of the Cross and recollection. When clicked, the user is directed to both pages |
+| "Sign Up" Link | Click Sign Up | The user is directed to the Sign Up form page |
+| "Log in" Link | Click Log in | The user is directed to the Log in form page |
+
+### Navigation - user is logged in
+
+| Feature  | Action | Expected Result |
+| ------------- | ------------- | ------------- |
+| "Reservations" Link | Click Reservations | The user is directed to the "Reservations" page |
+| "Log Out" Link | Click Log out | The user is directed  to the "Log out" page |
 
 # Testing
 ## HTML Validation
