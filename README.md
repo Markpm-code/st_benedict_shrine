@@ -126,6 +126,15 @@ Here is my implementation of Agile methodology to create User Stories using a te
 | "Reservations" Link | Click Reservations | The user is directed to the "Reservations" page |
 | "Log Out" Link | Click Log out | The user is directed  to the "Log out" page |
 
+### Home
+
+| Feature  | Action | Expected Result |
+| ------------- | ------------- | ------------- |
+| "Book Now" button link | Click Book Now | The user is directed to the Log in page if not logged in. If Logged in, the user is directed to the Booking form page |
+| "Maps Directions" Link | Click Directions | The user is directed to a google maps tab to start getting the directions but in mobile device, the directions link display is hidden and only left with a "View larger map" link which may lead to unexpected result |
+| "St. Benedict's Garden of life facebook page" link | Click the link | The user is directed to new tab of "St. Benedict's Garden of life facebook page" |
+
+
 # Testing
 ## HTML Validation
  * Used [W3C](https://validator.w3.org/) to validate HTML
