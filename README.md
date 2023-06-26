@@ -180,6 +180,9 @@ Here is my implementation of Agile methodology to create User Stories using a te
 
 # Testing
 ## HTML Validation
+* HTML Validation Errors
+    * The scrrenshots of the errors encountered during the validation is unavailable due to loss of the file. However, all the issues has been resolved.
+
  * Used [W3C](https://validator.w3.org/) to validate HTML
  * Validated by URL directly from gitpod
 
