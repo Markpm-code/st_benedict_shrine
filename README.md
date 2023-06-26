@@ -169,6 +169,15 @@ Here is my implementation of Agile methodology to create User Stories using a te
 | "Password and Password (again)" | Test for required fields | validations, error handling and usability are managed by Django allauth |
 | "Sign Up" button | Click Sign Up | Once all required fields are satisfied, the user will be redirected to the homepage, the username will be displayed along with the navbar items with a Hello " Username" Welcome to St. Benedict! indicating that they are logged in. The sign up and log in buttons will be replace with reservations and Log Out buttons |
 
+### Log Out
+
+| Feature  | Action | Expected Result |
+| ------------- | ------------- | ------------- |
+| "Log Out! Link | Click Log Out | The user is directed to logout page |
+| "Log out" button | Click Log out | The user is directed to a modal to confirm the action |
+| "Log out" button | Click Log out | The user is redirected back to the homepage |
+
+
 # Testing
 ## HTML Validation
  * Used [W3C](https://validator.w3.org/) to validate HTML
