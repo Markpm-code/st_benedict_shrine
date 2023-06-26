@@ -105,6 +105,20 @@ Here is my implementation of Agile methodology to create User Stories using a te
 
 ![User stories](./static/images/user_stories.png)
 
+## Technologies Used
+ * HTML - used for all templates structures
+ * CSS - used to style the site
+ * BOOTSTRAP 5 - used for styling, design and layouts
+ * HEROKU - used to deploy and and manage applications
+ * ELEPHANT SQL - - used as site's database
+ * CLOUDINARY - used to host Static files
+ * W3C - used to validate HTML and CSS
+ * CI PYTHON LINTER - used to validate Python codes
+ * GOOGLE FONTS - used for fonts
+ * FONT AWESOME - used for icons
+ * FAVICON ICON - used for favicon icons
+
+
 ## Manual Testing
 ### Navigation - user is not logged in
 
