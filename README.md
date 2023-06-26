@@ -160,6 +160,15 @@ Here is my implementation of Agile methodology to create User Stories using a te
 | "Book Now" button of the Station of the Cross Page | Click Book Now | The user is directed to the Log in page if not logged in. If Logged in, the user is directed to the Booking form page |
 | "Book Now" button of the Recollection Page | Click Book Now | The user is directed to the Log in page if not logged in. If Logged in, the user is directed to the Booking form page |
 
+### Sign Up
+
+| Feature  | Action | Expected Result |
+| ------------- | ------------- | ------------- |
+| "Sign Up" Link | Click Sign Up | The user is directed to the sign up form page |
+| "Email" input field | Test for required fileds | validations, error handling and usability are managed by Django allauth |
+| "Password and Password (again)" | Test for required fields | validations, error handling and usability are managed by Django allauth |
+| "Sign Up" button | Click Sign Up | Once all required fields are satisfied, the user will be redirected to the homepage, the username will be displayed along with the navbar items with a Hello " Username" Welcome to St. Benedict! indicating that they are logged in. The sign up and log in buttons will be replace with reservations and Log Out buttons |
+
 # Testing
 ## HTML Validation
  * Used [W3C](https://validator.w3.org/) to validate HTML
