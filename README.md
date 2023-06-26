@@ -274,3 +274,7 @@ Here is my implementation of Agile methodology to create User Stories using a te
   * Navigate to https://github.com/Markpm-code/st_benedict_shrine
   * In the right side of the page under the "About" section.
   * Click the fork or fork icon to create a copy of the original repository into your Github Account.
+
+## Credits
+* [Sticky Footer](https://www.youtube.com/watch?v=TaXql0h_wCA) used this to push the footer of the bootom of the page when the page content is empty.
+* [Models](https://github.com/LewisCM14/restaurant-booking-app) used his idea of the models and customize it.
